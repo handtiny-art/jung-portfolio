@@ -15,9 +15,40 @@ function RenderBlock({ block }: { block: ContentBlock }) {
     case "heading": {
       const { text, level } = block.data;
       if (!text) return null;
-      if (level === 1) return <h1 className="text-3xl font-bold mt-8 mb-3 text-foreground">{text}</h1>;
-      if (level === 2) return <h2 className="text-2xl font-semibold mt-7 mb-2 text-foreground">{text}</h2>;
-      return <h3 className="text-xl font-medium mt-5 mb-2 text-foreground">{text}</h3>;
+      if (level === 1) {
+        return (
+          <div className="mt-16 mb-5 first:mt-0">
+            <h1
+              className="text-3xl font-bold"
+              style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.22 0.03 48)" }}
+            >
+              {text}
+            </h1>
+            <div
+              className="mt-3 h-px w-16"
+              style={{ background: "oklch(0.68 0.105 58 / 0.6)" }}
+            />
+          </div>
+        );
+      }
+      if (level === 2) {
+        return (
+          <h2
+            className="text-2xl font-semibold mt-9 mb-3"
+            style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.28 0.045 50)" }}
+          >
+            {text}
+          </h2>
+        );
+      }
+      return (
+        <h3
+          className="text-xl font-medium mt-6 mb-2"
+          style={{ color: "oklch(0.35 0.06 50)" }}
+        >
+          {text}
+        </h3>
+      );
     }
 
     case "text": {
@@ -32,11 +63,11 @@ function RenderBlock({ block }: { block: ContentBlock }) {
     case "image": {
       if (!block.data.url) return null;
       return (
-        <figure className="my-4">
+        <figure className="my-6 flex flex-col items-center">
           <img
             src={asset(block.data.url)}
             alt={block.data.caption ?? ""}
-            className="w-full rounded-xl border"
+            className="max-w-full max-h-[560px] w-auto h-auto object-contain rounded-xl border"
           />
           {block.data.caption && (
             <figcaption className="text-center text-sm text-muted-foreground mt-2">{block.data.caption}</figcaption>
