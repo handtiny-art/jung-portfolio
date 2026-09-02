@@ -1,0 +1,230 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;700&family=Playfair+Display:wght@400;600;700&display=swap");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  /* Wood grain custom tokens */
+  --color-wood-light: var(--wood-light);
+  --color-wood-mid: var(--wood-mid);
+  --color-wood-dark: var(--wood-dark);
+  --color-amber: var(--amber);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* ── Scheme B: Ochre Earth Tone (赭石陶土) ── */
+  /* Background: warm ivory cream — #F2EBE0 */
+  --background: oklch(0.945 0.018 68);
+  /* Foreground: deep dark brown — #2A1C10 */
+  --foreground: oklch(0.165 0.028 42);
+
+  /* Card: slightly lighter warm surface — #EAE0D2 */
+  --card: oklch(0.91 0.022 66);
+  --card-foreground: oklch(0.165 0.028 42);
+
+  --popover: oklch(0.91 0.022 66);
+  --popover-foreground: oklch(0.165 0.028 42);
+
+  /* Primary: deep ochre brown — #7A5C3C */
+  --primary: oklch(0.42 0.065 48);
+  --primary-foreground: oklch(0.945 0.018 68);
+
+  /* Secondary: warm sand surface */
+  --secondary: oklch(0.88 0.025 65);
+  --secondary-foreground: oklch(0.30 0.045 48);
+
+  /* Muted: soft linen */
+  --muted: oklch(0.90 0.020 66);
+  --muted-foreground: oklch(0.52 0.030 52);
+
+  /* Accent: ochre orange-brown — #A07848 */
+  --accent: oklch(0.56 0.075 52);
+  --accent-foreground: oklch(0.945 0.018 68);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  /* Border: warm earth line — #D4C4A8 */
+  --border: oklch(0.82 0.032 62);
+  --input: oklch(0.86 0.025 64);
+  --ring: oklch(0.42 0.065 48);
+
+  /* Wood custom tokens */
+  --wood-light: oklch(0.78 0.050 60);
+  --wood-mid: oklch(0.56 0.070 50);
+  --wood-dark: oklch(0.35 0.058 44);
+  --amber: oklch(0.68 0.105 58);
+}
+
+.dark {
+  --background: oklch(0.14 0.025 45);
+  --foreground: oklch(0.93 0.018 72);
+  --card: oklch(0.18 0.028 45);
+  --card-foreground: oklch(0.93 0.018 72);
+  --popover: oklch(0.18 0.028 45);
+  --popover-foreground: oklch(0.93 0.018 72);
+  --primary: oklch(0.82 0.055 68);
+  --primary-foreground: oklch(0.18 0.025 45);
+  --secondary: oklch(0.24 0.030 48);
+  --secondary-foreground: oklch(0.90 0.018 72);
+  --muted: oklch(0.22 0.025 48);
+  --muted-foreground: oklch(0.60 0.025 60);
+  --accent: oklch(0.30 0.045 52);
+  --accent-foreground: oklch(0.90 0.018 72);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.28 0.035 50);
+  --input: oklch(0.28 0.035 50);
+  --ring: oklch(0.72 0.08 60);
+  --wood-light: oklch(0.55 0.065 60);
+  --wood-mid: oklch(0.42 0.065 50);
+  --wood-dark: oklch(0.25 0.045 45);
+  --amber: oklch(0.62 0.10 60);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", "Noto Serif TC", sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
+    max-width: 1200px;
+  }
+  .flex {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  /* ── Wood grain texture background ── */
+  .wood-grain-bg {
+    background-color: oklch(0.945 0.018 68);
+    /* Subtle radial gradient blob — Ayers style, no harsh lines */
+    background-image:
+      radial-gradient(
+        ellipse 70% 55% at 85% 15%,
+        oklch(0.78 0.055 58 / 0.28) 0%,
+        oklch(0.86 0.030 62 / 0.12) 50%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse 45% 40% at 90% 45%,
+        oklch(0.72 0.070 54 / 0.15) 0%,
+        transparent 70%
+      );
+  }
+
+  /* ── Guitar string divider ── */
+  .guitar-string {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      oklch(0.72 0.115 65 / 0.4) 15%,
+      oklch(0.58 0.075 52 / 0.7) 50%,
+      oklch(0.72 0.115 65 / 0.4) 85%,
+      transparent 100%
+    );
+    box-shadow: 0 0 3px oklch(0.72 0.115 65 / 0.25);
+  }
+
+  /* ── Wood panel card ── */
+  .wood-card {
+    background: oklch(0.91 0.022 66);
+    border: 1px solid oklch(0.82 0.032 62);
+    box-shadow:
+      0 1px 3px oklch(0.35 0.06 50 / 0.08),
+      0 4px 12px oklch(0.35 0.06 50 / 0.06),
+      inset 0 1px 0 oklch(1 0 0 / 0.6);
+    transition: box-shadow 0.2s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .wood-card:hover {
+    box-shadow:
+      0 2px 8px oklch(0.35 0.06 50 / 0.12),
+      0 8px 24px oklch(0.35 0.06 50 / 0.10),
+      inset 0 1px 0 oklch(1 0 0 / 0.6);
+    transform: translateY(-1px);
+  }
+
+  /* ── Amber accent glow ── */
+  .amber-glow {
+    box-shadow: 0 0 0 2px oklch(0.72 0.115 65 / 0.25),
+                0 0 12px oklch(0.72 0.115 65 / 0.15);
+  }
+
+  /* ── Fretboard stripe decoration ── */
+  .fretboard-accent {
+    background: repeating-linear-gradient(
+      90deg,
+      oklch(0.58 0.075 52 / 0.12) 0px,
+      oklch(0.58 0.075 52 / 0.12) 1px,
+      transparent 1px,
+      transparent 48px
+    );
+  }
+
+  /* ── Smooth page transitions ── */
+  .page-enter {
+    animation: fadeInUp 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Prose overrides for blog ── */
+  .prose {
+    @apply text-foreground;
+  }
+  .prose h1, .prose h2, .prose h3 {
+    @apply text-foreground;
+    font-family: "Playfair Display", serif;
+  }
+  .prose a {
+    @apply text-primary underline-offset-4;
+  }
+  .prose code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm;
+  }
+  .prose pre {
+    @apply bg-muted rounded-lg p-4 overflow-x-auto;
+  }
+  .prose blockquote {
+    border-left: 3px solid oklch(0.72 0.115 65 / 0.6);
+    @apply pl-4 text-muted-foreground italic;
+  }
+}
