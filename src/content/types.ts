@@ -12,6 +12,9 @@ export type MediaGridBlock = {
 };
 export type TableCell = string | { label: string; description?: string };
 export type TableBlock = { id: string; type: "table"; data: { headers: string[]; rows: TableCell[][] } };
+export type BadgesBlock = { id: string; type: "badges"; data: { items: string[] } };
+export type StepsBlock = { id: string; type: "steps"; data: { items: { title: string; description: string }[] } };
+export type ListBlock = { id: string; type: "list"; data: { items: { title: string; description?: string }[] } };
 
 export type ContentBlock =
   | HeadingBlock
@@ -22,7 +25,10 @@ export type ContentBlock =
   | DividerBlock
   | ColumnsBlock
   | MediaGridBlock
-  | TableBlock;
+  | TableBlock
+  | BadgesBlock
+  | StepsBlock
+  | ListBlock;
 
 export interface Category {
   id: number;

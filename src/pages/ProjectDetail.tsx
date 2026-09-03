@@ -194,6 +194,76 @@ function RenderBlock({ block }: { block: ContentBlock }) {
       );
     }
 
+    case "badges": {
+      const items = block.data.items.filter(Boolean);
+      if (!items.length) return null;
+      return (
+        <div className="flex flex-wrap gap-2 my-4">
+          {items.map((label, idx) => (
+            <span
+              key={idx}
+              className="px-3.5 py-1.5 text-sm font-medium rounded-full"
+              style={{
+                background: "oklch(0.88 0.055 70 / 0.4)",
+                border: "1px solid oklch(0.72 0.115 65 / 0.4)",
+                color: "oklch(0.35 0.06 50)",
+              }}
+            >
+              {label}
+            </span>
+          ))}
+        </div>
+      );
+    }
+
+    case "steps": {
+      const items = block.data.items.filter(i => i.title);
+      if (!items.length) return null;
+      return (
+        <div className="my-4 space-y-5">
+          {items.map((item, idx) => (
+            <div key={idx} className="flex gap-4">
+              <div
+                className="flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm shrink-0"
+                style={{
+                  background: "oklch(0.42 0.065 48)",
+                  color: "oklch(0.97 0.018 72)",
+                }}
+              >
+                {idx + 1}
+              </div>
+              <div>
+                <div className="font-semibold text-foreground">{item.title}</div>
+                {item.description && (
+                  <div className="text-sm text-foreground/70 mt-0.5 leading-relaxed">{item.description}</div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    case "list": {
+      const items = block.data.items.filter(i => i.title);
+      if (!items.length) return null;
+      return (
+        <ul className="my-4 space-y-3">
+          {items.map((item, idx) => (
+            <li key={idx} className="flex gap-2.5">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "oklch(0.58 0.075 52)" }} />
+              <div>
+                <span className="font-semibold text-foreground">{item.title}</span>
+                {item.description && (
+                  <span className="text-foreground/80"> {item.description}</span>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
     default:
       return null;
   }

@@ -570,7 +570,7 @@ export const projects: Project[] = [
       {
         "data": {
           "level": 1,
-          "text": "Project Overview "
+          "text": "Project Overview"
         },
         "id": "6aJw0tCP",
         "type": "heading"
@@ -584,34 +584,10 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "level": 1,
-          "text": "Impact"
+          "items": ["92-95% Time Saved", "270+ Likes", "240+ Reposts"]
         },
-        "id": "AAXEtlSv",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "items": [
-            {
-              "description": "From 2 hours to 5 minuites",
-              "metric": "Time Saved",
-              "value": "92-95%"
-            },
-            {
-              "description": "Threads",
-              "metric": "LIKES",
-              "value": "270+"
-            },
-            {
-              "description": "Threads",
-              "metric": "REPOSTS",
-              "value": "240+"
-            }
-          ]
-        },
-        "id": "b3_bQanR",
-        "type": "metrics"
+        "id": "impactBadges",
+        "type": "badges"
       },
       {
         "data": {
@@ -652,8 +628,13 @@ export const projects: Project[] = [
         "type": "text"
       },
       {
+        "data": {},
+        "id": "dividerBeforeProblem",
+        "type": "divider"
+      },
+      {
         "data": {
-          "level": 2,
+          "level": 1,
           "text": "Problem Statement"
         },
         "id": "MUBe8QC7",
@@ -757,6 +738,13 @@ export const projects: Project[] = [
       },
       {
         "data": {
+          "text": "I evaluated YTtoVocab against 5 existing solutions in the market: YouTube, Quizlet, Anki, VoiceTube, and traditional manual flashcards. Here is a brief introductory of each product's strengths and limitations:"
+        },
+        "id": "4JY2p2_0",
+        "type": "text"
+      },
+      {
+        "data": {
           "caption": "",
           "url": "/assets/projects/1779271282108-fpxzjj6yfpk_b42e3d03.png"
         },
@@ -765,9 +753,16 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "text": "I evaluated YTtoVocab against 5 existing solutions in the market: YouTube, Quizlet, Anki, VoiceTube, and traditional manual flashcards. Here is a brief introductory of each product's strengths and limitations:"
+          "text": "These products can be compared by two main metrics: Creation Efficiency and Real-world Content Integration. Traditional word card is the most time-consuming item and less connection to real-world content. Anki and Quizlet are digital word card apps, but they still cost people a great amount of time to create a set of word card, because both products rely human key-in the vocabulary. Voicetube is a platform that selects insightful language videos for learners to learn English through videos. It also includes flashcard feature for users to review vocabulary they saved from their videos. The generation of flashcards is fast as long as the user click \"save\" during their watching videos; however, the learning contents (videos) need to be based on the platform selection, but not choosing from their own interest. Finally, YTtoVocab is a product that generate flashcards within a short period of time and the contents can be decided by the users, which outweighs the other 4 products."
         },
-        "id": "4JY2p2_0",
+        "id": "compAnalysisExplain",
+        "type": "text"
+      },
+      {
+        "data": {
+          "text": "To dive deeper into each product, 5 more details can be compared through their features: Manual Card Editing, Gamified Review Features, Forgetting Curve Mgmt, User Experience (UX), and AI Automation Level."
+        },
+        "id": "compAnalysisTableIntro",
         "type": "text"
       },
       {
@@ -861,6 +856,148 @@ export const projects: Project[] = [
         },
         "id": "mLMRlm5d",
         "type": "mediaGrid"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Usage Workflow"
+        },
+        "id": "usageWorkflowHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "The operation of this app is very simple, the user only has to follow 3 steps:"
+        },
+        "id": "usageWorkflowIntro",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            { "title": "Paste YouTube Link", "description": "Enter or paste a YouTube video link on the homepage." },
+            { "title": "Click Convert Button", "description": "Select the \"Convert to Flashcards\" function." },
+            { "title": "Wait for Auto Processing", "description": "Within 20-30 seconds, the AI automatically extracts CEFR B2+ vocabulary and generates flashcards." }
+          ]
+        },
+        "id": "usageWorkflowSteps",
+        "type": "steps"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Other Features"
+        },
+        "id": "otherFeaturesHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "items": [
+            { "title": "Flippable Flashcards:", "description": "Front displays English word, back includes Chinese translation, part of speech, and example sentences." },
+            { "title": "Swipe to Learn:", "description": "Swipe right to mark \"learned\", swipe left to continue studying, matching mobile device habits." },
+            { "title": "Manual Add & Edit:", "description": "Users can manually add missed words or modify AI-generated content in the word list." }
+          ]
+        },
+        "id": "otherFeaturesList",
+        "type": "list"
+      },
+      {
+        "data": {},
+        "id": "dividerBeforeGTM",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 1,
+          "text": "Go-to-Market Strategy"
+        },
+        "id": "gtmHeading",
+        "type": "heading"
+      },
+      {
+        "data": {},
+        "id": "dividerBeforeImpact",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 1,
+          "text": "Impact & Results"
+        },
+        "id": "impactResultsHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "With YTtoVocab, the original 1 hour building flashcards hour, can be reduced to 5 mins."
+        },
+        "id": "impactTimeText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "caption": "",
+          "url": "/assets/projects/ytv-time-comparison.png"
+        },
+        "id": "impactTimeChart",
+        "type": "image"
+      },
+      {
+        "data": {
+          "text": "Threads Community Response: After I posted the demo video on threads, I received about 280 likes and 240 reposts."
+        },
+        "id": "impactThreadsText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "caption": "",
+          "url": "/assets/projects/ytv-threads-response.png"
+        },
+        "id": "impactThreadsImage",
+        "type": "image"
+      },
+      {
+        "data": {
+          "text": "Family and friends feedbacks: Those who had tried this app gave me the following feedbacks:"
+        },
+        "id": "impactFeedbackIntro",
+        "type": "text"
+      },
+      {
+        "data": {
+          "text": "The UI is so clean and comfortable to use!"
+        },
+        "id": "feedbackQuote1",
+        "type": "quote"
+      },
+      {
+        "data": {
+          "text": "The auto-generated flashcards are so convenient!"
+        },
+        "id": "feedbackQuote2",
+        "type": "quote"
+      },
+      {
+        "data": {
+          "text": "The labor and low-efficiency are true painpoints from hand-made flashcards. The idea of this app is great!"
+        },
+        "id": "feedbackQuote3",
+        "type": "quote"
+      },
+      {
+        "data": {},
+        "id": "dividerBeforeReflection",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 1,
+          "text": "Reflection"
+        },
+        "id": "reflectionHeading",
+        "type": "heading"
       }
     ]
   }
