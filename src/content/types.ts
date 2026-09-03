@@ -10,7 +10,8 @@ export type MediaGridBlock = {
   type: "mediaGrid";
   data: { items: { id: string; type: "image" | "video"; url: string; width: "full" | "half" | "third" | "quarter"; caption?: string }[] };
 };
-export type TableBlock = { id: string; type: "table"; data: { headers: string[]; rows: string[][] } };
+export type TableCell = string | { label: string; description?: string };
+export type TableBlock = { id: string; type: "table"; data: { headers: string[]; rows: TableCell[][] } };
 
 export type ContentBlock =
   | HeadingBlock

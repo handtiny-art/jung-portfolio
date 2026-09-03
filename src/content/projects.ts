@@ -772,20 +772,67 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "headers": [
-            "欄位 1",
-            "欄位 2",
-            "欄位 3"
-          ],
+          "headers": ["Evaluation Criteria", "Quizlet", "Anki", "VoiceTube", "Traditional Word Card", "YTtoVocab"],
           "rows": [
             [
-              "資料",
-              "資料",
-              "資料"
+              "Cards Creation Efficiency",
+              { "label": "Medium", "description": "Text input & basic AI text-generation, but users still need to create cards manually." },
+              { "label": "Low (High Friction)", "description": "Requires manual field setup, finding audio, and examples. Steep learning curve." },
+              { "label": "High", "description": "Easy to collect words from in-app videos into flashcards." },
+              { "label": "Very Low", "description": "100% manual handwriting/cutting. No audio or pronunciation features." },
+              { "label": "Very High (Frictionless)", "description": "Enter any YouTube URL; AI auto-generates everything instantly." }
+            ],
+            [
+              "Contextual Connection",
+              { "label": "Low", "description": "Cards usually contain pure text definitions and simple sentences without video context." },
+              { "label": "Low", "description": "Lacks video context unless users spend time manually embedding multimedia." },
+              { "label": "Very High", "description": "Fully integrated with YouTube videos to see real-world usage. Only supports in-app curated videos." },
+              { "label": "None", "description": "Text-only, completely detached from real-world language context." },
+              { "label": "Very High", "description": "Captures full video context, audio, and visual cues from any chosen YouTube video." }
+            ],
+            [
+              "Manual Card Editing",
+              { "label": "Supported" },
+              { "label": "Supported" },
+              { "label": "Not Supported", "description": "Card content is platform-generated and uneditable after collection." },
+              { "label": "Not Supported" },
+              { "label": "Supported", "description": "AI creates the base cards, then users can freely edit or add new words." }
+            ],
+            [
+              "Gamified Review Features",
+              { "label": "High", "description": "Offers matching games, starred reviews, and multiple quiz modes." },
+              { "label": "None", "description": "Strict, text-heavy interface with zero gamified elements." },
+              { "label": "Medium", "description": "Features speaking challenges and basic quizzes, but not flashcard-centric." },
+              { "label": "None", "description": "Relies 100% on pure flip and review cards." },
+              { "label": "Low", "description": "Focuses strictly on efficient, frictionless flashcard review workflows." }
+            ],
+            [
+              "Forgetting Curve Mgmt",
+              { "label": "Low", "description": "Has basic review reminders, but lacks an advanced Spaced Repetition engine." },
+              { "label": "Ultimate", "description": "Features the most powerful, open-source Spaced Repetition algorithm." },
+              { "label": "None" },
+              { "label": "None" },
+              { "label": "Phase 2 (In Roadmap)" }
+            ],
+            [
+              "User Experience (UX)",
+              { "label": "High", "description": "Modern interface with seamless cross-platform sync and a low learning curve." },
+              { "label": "Low", "description": "Outdated interface that feels like software from the last decade; unfriendly to beginners." },
+              { "label": "High", "description": "Smooth video-watching and word-collecting flow. Beautifully designed app." },
+              { "label": "Low", "description": "Bulky to carry, easy to lose, and highly inconvenient to look up audio." },
+              { "label": "High", "description": "Minimalist, modern, and user-friendly product experience designed." }
+            ],
+            [
+              "AI Automation Level",
+              { "label": "Partial", "description": "Text conversion (Magic Notes) and text-based AI tutoring (Q-Chat)." },
+              { "label": "Via Plugins", "description": "No official AI core; relies on power users installing third-party AI add-ons." },
+              { "label": "High", "description": "Features AI Speaking Analysis and video summaries (SmartNote)." },
+              { "label": "None" },
+              { "label": "Full Integration", "description": "First one that integrates AI extracting external video sourcing and card generation." }
             ]
           ]
         },
-        "id": "WV5t3zUo",
+        "id": "compAnalysisTable",
         "type": "table"
       },
       {

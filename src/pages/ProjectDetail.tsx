@@ -172,11 +172,20 @@ function RenderBlock({ block }: { block: ContentBlock }) {
             <tbody>
               {rows.map((row, rowIdx) => (
                 <tr key={rowIdx} className="border-t hover:bg-muted/50">
-                  {row.map((cell, colIdx) => (
-                    <td key={colIdx} className="border p-3 text-foreground/80">
-                      {cell}
-                    </td>
-                  ))}
+                  {row.map((cell, colIdx) =>
+                    typeof cell === "string" ? (
+                      <td key={colIdx} className="border p-3 align-top text-foreground/80">
+                        {cell}
+                      </td>
+                    ) : (
+                      <td key={colIdx} className="border p-3 align-top">
+                        <div className="font-semibold text-foreground">{cell.label}</div>
+                        {cell.description && (
+                          <div className="text-sm text-foreground/70 mt-1 leading-relaxed">{cell.description}</div>
+                        )}
+                      </td>
+                    )
+                  )}
                 </tr>
               ))}
             </tbody>
