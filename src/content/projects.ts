@@ -916,6 +916,73 @@ export const projects: Project[] = [
         "type": "heading"
       },
       {
+        "data": {
+          "level": 2,
+          "text": "Distribution Channels"
+        },
+        "id": "gtmDistHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "Distributed primarily as a PWA (Progressive Web App), with an installation guide created for users.\n\nGiven the low-cost build approach, the initial release focused on PWA distribution rather than the App Store, avoiding platform fees."
+        },
+        "id": "gtmDistText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Monetization Model"
+        },
+        "id": "gtmMonHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "My original intent was to help English learners access convenient learning resources. Since I didn't want a paywall to block users from the product's core functionality, the earliest version's core features were made completely free for learners."
+        },
+        "id": "gtmMonText1",
+        "type": "text"
+      },
+      {
+        "data": {
+          "text": "To keep the product free for users without increasing development costs, I made the following adjustments:"
+        },
+        "id": "gtmMonText2",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            { "title": "Switched AI providers:", "description": "Replaced the AI model originally used for vocabulary conversion, Gemini 4.5, with Supadata AI and the OpenAI API, since both offer more generous free token quotas, significantly reducing token costs." },
+            { "title": "Added usage limits:", "description": "Limited each user to 3 flashcard generations per week, preventing wasted tokens from low-value or redundant generations without meaningfully affecting learning motivation." }
+          ]
+        },
+        "id": "gtmMonList",
+        "type": "list"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Product Roadmap"
+        },
+        "id": "gtmRoadmapHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "items": [
+            { "title": "Phase 1 — Launch and Social Media Marketing", "description": "Built an Instagram account to promote the product and publish English-learning content." },
+            { "title": "Phase 2 — Enhance the Video Experience", "description": "Add instant video replay and contextual video playback features to deepen the immersive learning experience." },
+            { "title": "Phase 3 — Integrate SRS Algorithms", "description": "Introduce spaced repetition systems and forgetting curve algorithms to directly compete in Anki's core market." },
+            { "title": "Phase 4 — Diverse Review Modes", "description": "Develop multiple review methods to build a complete, personalized language-learning ecosystem." }
+          ]
+        },
+        "id": "gtmRoadmapSteps",
+        "type": "steps"
+      },
+      {
         "data": {},
         "id": "dividerBeforeImpact",
         "type": "divider"
@@ -998,6 +1065,108 @@ export const projects: Project[] = [
         },
         "id": "reflectionHeading",
         "type": "heading"
+      },
+      {
+        "data": {
+          "text": "Through this side project, I not only experienced the end-to-end process of building a product from 0 to 1, but also developed a deeper understanding of AI-assisted product development. I learned how to leverage different AI tools based on their strengths and limitations, how to use vibe coding to turn ideas into functional digital products, and where human judgment remains essential throughout the product development process. For example:"
+        },
+        "id": "reflectionIntro",
+        "type": "text"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "How to Realize Your Own Ideas / Solve Problems in Your Own Life"
+        },
+        "id": "reflectionH1",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "To create a product, we can start from something in daily life that has been bothering us, think about whether there's a recurring pattern to it, and talk to AI about how to solve it digitally."
+        },
+        "id": "reflectionT1",
+        "type": "text"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Understanding Different AIs' Strengths and Weaknesses"
+        },
+        "id": "reflectionH2",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "During the build process, I found that conversational AI tools like Gemini tend to get stuck going in circles on a single problem, unable to resolve it in one go. After switching to Claude Code, I realized that only by letting the AI read my entire project's codebase could it accurately diagnose my issue, without fixing A and breaking B."
+        },
+        "id": "reflectionT2",
+        "type": "text"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Understanding AI's Limits: Where It Can't Replace People"
+        },
+        "id": "reflectionH3",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "items": [
+            { "title": "Ideas & Decisions:", "description": "Still need a customer, a PM." },
+            { "title": "Product Aesthetics:", "description": "Still need a designer." },
+            { "title": "Operations & Maintenance:", "description": "Still need engineers and customer support." },
+            { "title": "Sales:", "description": "Still need marketing and business development." }
+          ]
+        },
+        "id": "reflectionList3",
+        "type": "list"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Data Persistence"
+        },
+        "id": "reflectionH4",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "A screen an AI writes in 2 minutes is usually just a static page: the user can click the buttons on it, but can't share it with others, and it can't save any data. If the user refreshes the page, everything disappears. From there, I started to realize that behind every webpage we see, there's a whole database responsible for recording what users do."
+        },
+        "id": "reflectionT4",
+        "type": "text"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Security Awareness"
+        },
+        "id": "reflectionH5",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "Once my tool was about 80% done, people started asking: is your tool actually secure? Does it handle payments? Does the login flow expose users' sensitive information? I discovered that most self-built AI tools aren't secure enough, which sharpened my sensitivity to security issues going forward."
+        },
+        "id": "reflectionT5",
+        "type": "text"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Thinking About Monetization and Go-to-Market"
+        },
+        "id": "reflectionH6",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "If I eventually want my product to be profitable, I need to start thinking about: which platform to publish through — PWA or App Store? How to get exposure for the work? Whether it should be free and ad-supported, subscription-based, or a one-time purchase? How to operate and create value going forward, and what features could still be added?"
+        },
+        "id": "reflectionT6",
+        "type": "text"
       }
     ]
   }
