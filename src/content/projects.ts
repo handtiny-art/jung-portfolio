@@ -337,14 +337,14 @@ export const projects: Project[] = [
           "level": 1,
           "text": "Project Overview"
         },
-        "id": "NDuZBmUq",
+        "id": "overviewHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "In the year of 2025, my team developed a conference platform that extends iPress’s journal platform to better serve conference organizers, while expanding content sources and revenue."
+          "text": "In 2025, my team developed a conference platform that extends iPress's journal platform to better serve conference organizers, while expanding content sources and revenue for the company."
         },
-        "id": "cVSKLcxm",
+        "id": "overviewText",
         "type": "text"
       },
       {
@@ -352,7 +352,7 @@ export const projects: Project[] = [
           "level": 3,
           "text": "My Role: Product Manager"
         },
-        "id": "q6tuNMoH",
+        "id": "roleHeading",
         "type": "heading"
       },
       {
@@ -360,15 +360,15 @@ export const projects: Project[] = [
           "level": 3,
           "text": "Timeline: 2024 Q3 - 2026 Q1"
         },
-        "id": "_xbSAfeF",
+        "id": "timelineHeading",
         "type": "heading"
       },
       {
         "data": {
           "level": 3,
-          "text": "Team: 2 Stakeholders, 2 SA, 1 engineer, 1 designer"
+          "text": "Team: 2 Stakeholders, 2 SA, 1 Engineer, 1 Designer"
         },
-        "id": "XHWQTUM5",
+        "id": "teamHeading",
         "type": "heading"
       },
       {
@@ -376,74 +376,59 @@ export const projects: Project[] = [
           "level": 3,
           "text": "My Responsibilities"
         },
-        "id": "NrZHb3Oe",
+        "id": "responsibilitiesHeading",
         "type": "heading"
       },
       {
         "data": {
           "text": "・Researched and analyzed the differences between journal and conference workflows.\n・Designed the system structure and user interface.\n・Prepared use cases and product requirement documents (PRDs).\n・Collaborated closely with a system analyst, engineer, and designer.\n・Developed the testing plan and wrote detailed test cases.\n・Planned pre-launch activities."
         },
-        "id": "CKh68aL3",
+        "id": "responsibilitiesText",
         "type": "text"
       },
       {
         "data": {},
-        "id": "UBPpzDAf",
+        "id": "dividerAfterOverview",
         "type": "divider"
       },
       {
         "data": {
           "level": 1,
-          "text": "Impact"
+          "text": "Problem Statement: Why Build a New Conference Platform?"
         },
-        "id": "5snO7UiK",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "text": "這塊還不知道要寫什麼"
-        },
-        "id": "ArhDYz74",
-        "type": "text"
-      },
-      {
-        "data": {
-          "level": 3,
-          "text": "Problem Statement: WHY building a new conference platform in the company?"
-        },
-        "id": "JmlhnDxv",
+        "id": "problemHeading",
         "type": "heading"
       },
       {
         "data": {
           "columns": [
             {
-              "content": "There is no integrated platform for managing conferences in Taiwan.",
-              "heading": "Lack of an integrated platform"
+              "heading": "Lack of an integrated platform",
+              "content": "There is no integrated platform for managing conferences in Taiwan."
             },
             {
-              "content": "Most people use email and Google Forms to review manuscripts and track their submission and reviewing workflows, which is inconvenient for large-scale communication across schools, units, and personnel.",
-              "heading": "Fragmented workflows"
+              "heading": "Fragmented workflows",
+              "content": "Most people use email and Google Forms to review manuscripts and track submission and reviewing workflows, which is inconvenient for large-scale communication across schools, units, and personnel."
             }
           ]
         },
-        "id": "aAec3L0S",
+        "id": "problemCols1",
         "type": "columns"
       },
       {
         "data": {
           "columns": [
             {
-              "content": "Many conferences struggle with low efficiency and communication gaps, and the manuscripts and reviewing records cannot be properly preserved.",
-              "heading": "Low efficiency & information gaps"
+              "heading": "Low efficiency & information gaps",
+              "content": "Many conferences struggle with low efficiency and communication gaps, and manuscripts and reviewing records cannot be properly preserved."
             },
             {
-              "content": "Since the parent company is a database company that values content collections, building a conference platform naturally aligns with the company’s long-term goals.",
-              "heading": "Strategic alignment with the parent company"
+              "heading": "Strategic alignment with the parent company",
+              "content": "Since the parent company is a database company that values content collections, building a conference platform naturally aligns with the company's long-term goals."
             }
           ]
         },
-        "id": "D6G5pFsA",
+        "id": "problemCols2",
         "type": "columns"
       },
       {
@@ -451,37 +436,37 @@ export const projects: Project[] = [
           "level": 1,
           "text": "Research & Ideation"
         },
-        "id": "9EzBeLnm",
+        "id": "researchHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "To better understand the workflow of preparing a conference and define the product scope, we conducted the following research: "
+          "text": "To better understand the workflow of preparing a conference and define the product scope, we conducted the following research:"
         },
-        "id": "RUeOOUe_",
+        "id": "researchText",
         "type": "text"
       },
       {
         "data": {
           "items": [
             {
-              "description": "Interviewed professors to understand the basic workflows of a conferences.",
               "metric": "Interviews",
-              "value": "3"
+              "value": "3",
+              "description": "Interviewed professors to understand the basic workflows of a conference."
             },
             {
-              "description": "Did competitve analysis 3 conference platforms to summarize our strengths and the features to develop.",
               "metric": "Competitive Analysis",
-              "value": "3"
+              "value": "3",
+              "description": "Analyzed 3 conference platforms to summarize our strengths and the features to develop."
             },
             {
-              "description": "Researched over 30 conference websites to identify current user pain points and narrow down the final reviewing workflow for the platform designs.",
               "metric": "Conferences",
-              "value": "30"
+              "value": "30",
+              "description": "Researched over 30 conference websites to identify current user pain points and narrow down the final reviewing workflow for the platform design."
             }
           ]
         },
-        "id": "8-cdqfDG",
+        "id": "researchMetrics",
         "type": "metrics"
       },
       {
@@ -489,7 +474,7 @@ export const projects: Project[] = [
           "level": 1,
           "text": "Collaboration"
         },
-        "id": "1cgR3ah6",
+        "id": "collabHeading",
         "type": "heading"
       },
       {
@@ -497,45 +482,45 @@ export const projects: Project[] = [
           "level": 2,
           "text": "Establish the Same Vision for the Product Team"
         },
-        "id": "69O4ewTs",
+        "id": "collabVisionHeading",
         "type": "heading"
       },
       {
         "data": {
           "level": 3,
-          "text": "1. Illustrate with Streamlane Diagram"
+          "text": "1. Illustrate with a Swimlane Diagram"
         },
-        "id": "5mE6utZe",
+        "id": "swimlaneHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "Since the user workflow is highly complex, I designed a swimlane diagram to streamline communication with the engineering team. The diagram details 4 distinct conference roles and the essential phases they navigate during conference preparation."
+          "text": "Since the user workflow is highly complex, I designed a swimlane diagram to streamline communication with the engineering team. The diagram details 4 distinct conference roles and the essential phases they navigate during conference preparation. Since the team already had a clear understanding of the journal reviewing process, I compared the two workflows directly on the diagram — marking in red the steps that could be removed, and in green the new steps introduced for conference reviewing."
         },
-        "id": "1myB2oVc",
+        "id": "swimlaneText",
         "type": "text"
       },
       {
         "data": {
-          "caption": "",
-          "url": "/assets/projects/1780199466846-kg0yjfi9otp_ffaffb4d.png"
+          "caption": "Swimlane diagram comparing the journal review process with the new conference review process, across 4 roles.",
+          "url": "/assets/projects/ipress-conference/swimlane.png"
         },
-        "id": "_BYnR6G-",
+        "id": "swimlaneImage",
         "type": "image"
       },
       {
         "data": {
           "level": 3,
-          "text": "2. Display with Interactive Figma Prototype"
+          "text": "2. Display with an Interactive Figma Prototype"
         },
-        "id": "0ajG6RrI",
+        "id": "figmaHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "I built an interactive Figma Prototype to explain my design alongside with the streamlane diagram. This allowed the engineering team to better understand how users operate within the system."
+          "text": "I built an interactive Figma prototype to explain my design alongside the swimlane diagram, allowing the engineering team to better understand how users operate within the system."
         },
-        "id": "sXvKnKIM",
+        "id": "figmaText",
         "type": "text"
       },
       {
@@ -543,8 +528,487 @@ export const projects: Project[] = [
           "caption": "",
           "url": "/assets/projects/1780243651913-qes08z1hfo_d2274cd1.gif"
         },
-        "id": "OOnochaB",
+        "id": "figmaGif",
         "type": "image"
+      },
+      {
+        "data": {
+          "text": "This interactive prototype presents the basic steps a user completes to finish a format check:"
+        },
+        "id": "figmaStepsIntro",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "title": "Locate the Manuscript",
+              "description": "Find the target manuscript from the list."
+            },
+            {
+              "title": "Open and Review",
+              "description": "Open the manuscript and review its content."
+            },
+            {
+              "title": "Click \"Pass\"",
+              "description": "Mark the manuscript as passing if it meets the requirements."
+            },
+            {
+              "title": "Confirm the Decision",
+              "description": "Confirm the pass decision."
+            },
+            {
+              "title": "Automatic Status Update",
+              "description": "The manuscript status updates automatically, and the system notifies the next responsible party."
+            }
+          ]
+        },
+        "id": "figmaSteps",
+        "type": "steps"
+      },
+      {
+        "data": {
+          "text": "The scope was intentionally kept minimal to allow engineers to focus on the core workflow rather than other design details."
+        },
+        "id": "figmaScopeNote",
+        "type": "quote"
+      },
+      {
+        "data": {},
+        "id": "dividerAfterCollab",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 1,
+          "text": "Design & Decision — Improving Old and Introducing New"
+        },
+        "id": "designHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Improving Old"
+        },
+        "id": "improvingOldHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "Spotting the Existing Problems on the Old Interface"
+        },
+        "id": "oldProblemsHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "caption": "The old iPress journal editor interface.",
+          "url": "/assets/projects/ipress-conference/old-interface.png"
+        },
+        "id": "oldInterfaceImage",
+        "type": "image"
+      },
+      {
+        "data": {
+          "text": "The old iPress journal system had long suffered from the following problems:"
+        },
+        "id": "oldProblemsText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "title": "Unclear Navigation",
+              "description": "Users struggle to know where they are and how to move between sections."
+            },
+            {
+              "title": "Poor Visibility of System Status",
+              "description": "Users often cannot tell which page or unit they are viewing, causing confusion."
+            },
+            {
+              "title": "Limited Feature Discoverability",
+              "description": "Users often have difficulty finding key features."
+            }
+          ]
+        },
+        "id": "oldProblemsList",
+        "type": "list"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "Improvement 1: Navigation & System Status Visibility"
+        },
+        "id": "improvement1Heading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "id": "nav-before",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/nav-before.png",
+              "width": "half",
+              "caption": "Before"
+            },
+            {
+              "id": "nav-after",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/nav-after.png",
+              "width": "half",
+              "caption": "After"
+            }
+          ]
+        },
+        "id": "improvement1MediaGrid",
+        "type": "mediaGrid"
+      },
+      {
+        "data": {
+          "text": "In the new design, I made two adjustments:"
+        },
+        "id": "improvement1Text",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "title": "① Add a Conference Title Banner:",
+              "description": "Users may belong to multiple editorial teams and review for several conferences. The banner clarifies which unit they are currently reviewing, minimizing mistakes."
+            },
+            {
+              "title": "② Move the Status List into a Side Menu:",
+              "description": "This redesign streamlines navigation and reduces the need for users to switch back and forth between the process page and the manuscript page. In the original design, users often lost their orientation on the manuscript page because they couldn't quickly identify the manuscript they needed to review."
+            }
+          ]
+        },
+        "id": "improvement1List",
+        "type": "list"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "Improvement 2: Feature Discoverability"
+        },
+        "id": "improvement2Heading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "id": "discover-before",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/discover-before.png",
+              "width": "half",
+              "caption": "Before"
+            },
+            {
+              "id": "discover-after",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/discover-after.png",
+              "width": "half",
+              "caption": "After"
+            }
+          ]
+        },
+        "id": "improvement2MediaGrid",
+        "type": "mediaGrid"
+      },
+      {
+        "data": {
+          "text": "We interviewed one of our editors and learned that the \"invite external reviewer\" button was buried too deep in the original platform. As the screenshot shows, users had to first type a query into the search bar before that button appeared, below the results — which left this valuable feature undiscovered and unused for a long time."
+        },
+        "id": "improvement2TextBefore",
+        "type": "text"
+      },
+      {
+        "data": {
+          "text": "I reorganized the invite-reviewer function into two tabs — internal (default) and external — so users can immediately see an alternative when the default option doesn't meet their needs. This redesign was implemented in the iPress journal system in early 2025."
+        },
+        "id": "improvement2TextAfter",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "metric": "External Reviewers",
+              "value": "+10%",
+              "description": "Increase compared to the previous year, after the two-tab redesign shipped in early 2025."
+            }
+          ]
+        },
+        "id": "improvement2Metrics",
+        "type": "metrics"
+      },
+      {
+        "data": {},
+        "id": "dividerBeforeNew",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 2,
+          "text": "Introducing New"
+        },
+        "id": "introducingNewHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "Building a New Feature: Agenda Module"
+        },
+        "id": "agendaHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "After resolving the existing pain points, I moved on to introducing a new feature. This agenda module project ran through a complete process: empathize, define, ideate, prototype with vibe coding, test, and iterate."
+        },
+        "id": "agendaIntroText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "caption": "Agenda Module overview",
+          "url": "/assets/projects/ipress-conference/agenda-overview.png"
+        },
+        "id": "agendaOverviewImage",
+        "type": "image"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "1. Empathize the Pain Points and Define the Value of the Agenda Module"
+        },
+        "id": "agendaEmpathizeHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "During my research, I found that an agenda module would be a valuable feature to develop, because the agendas most conferences create today are:"
+        },
+        "id": "agendaEmpathizeText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "title": "Time-consuming:",
+              "description": "Most conferences create their agendas manually in Word or PowerPoint, which is time-consuming."
+            },
+            {
+              "title": "Confusing:",
+              "description": "Agendas created manually are often difficult for participants to understand."
+            }
+          ]
+        },
+        "id": "agendaEmpathizeList",
+        "type": "list"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "2. Ideate the Structure of Conference Agendas"
+        },
+        "id": "agendaIdeateHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "Upon studying 10 conference agendas, I discovered 3 recurring types of activities:"
+        },
+        "id": "agendaActivityTypesText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            "Keynote Speech",
+            "Presentation",
+            "General Activities (openings, closings, meal gatherings)"
+          ]
+        },
+        "id": "agendaActivityTypesBadges",
+        "type": "badges"
+      },
+      {
+        "data": {
+          "text": "Additionally, 6 items are typically announced for each session:"
+        },
+        "id": "agendaSessionFieldsText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            "Session Name",
+            "Session Time",
+            "Location",
+            "Presenter / Speaker",
+            "Presentation Topic",
+            "Host"
+          ]
+        },
+        "id": "agendaSessionFieldsBadges",
+        "type": "badges"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "3. Vibe-Code the Agenda Prototypes"
+        },
+        "id": "agendaVibeCodingHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "Based on the previous summary, I used Claude.ai with prompts to generate an agenda-setting page and a front-page prototype, allowing the team to quickly visualize the interface."
+        },
+        "id": "agendaVibeCodingText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "id": "agenda-front",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/agenda-front.png",
+              "width": "half",
+              "caption": "Front Page of the Agenda Module"
+            },
+            {
+              "id": "agenda-setting",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/agenda-setting.png",
+              "width": "half",
+              "caption": "Setting Page of the Agenda Module"
+            }
+          ]
+        },
+        "id": "agendaVibeCodingMediaGrid",
+        "type": "mediaGrid"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "4. Test the Prototype"
+        },
+        "id": "agendaTestHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "I recruited 3 participants within the company to test the prototypes and identified two issues:"
+        },
+        "id": "agendaTestText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "title": "① Confusing placeholders:",
+              "description": "The guidance inside the form fields was unclear, making it difficult for users to complete the form."
+            },
+            {
+              "title": "② Overlapping sessions could not be presented:",
+              "description": "Conferences usually arrange overlapping sessions — different sessions happening at the same time in different rooms — but the first version didn't account for this."
+            }
+          ]
+        },
+        "id": "agendaTestList",
+        "type": "list"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "id": "agenda-placeholder-problem",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/agenda-placeholder-problem.png",
+              "width": "half",
+              "caption": "Issue ①: confusing placeholders"
+            },
+            {
+              "id": "agenda-overlapping",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/agenda-overlapping.png",
+              "width": "half",
+              "caption": "Issue ②: overlapping sessions not supported"
+            }
+          ]
+        },
+        "id": "agendaTestMediaGrid",
+        "type": "mediaGrid"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "5. Iterate with User Feedback"
+        },
+        "id": "agendaIterateHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "title": "Offer clearer instructions:",
+              "description": "Added examples inside the placeholders, which helped clarify how to complete each field."
+            },
+            {
+              "title": "Adjust the time hierarchy:",
+              "description": "Grouped sessions under higher-level time blocks instead of displaying each one individually."
+            }
+          ]
+        },
+        "id": "agendaIterateList",
+        "type": "list"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "id": "agenda-clarify-placeholder",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/agenda-clarify-placeholder.png",
+              "width": "half",
+              "caption": "Clearer placeholder examples"
+            },
+            {
+              "id": "agenda-adjust-time",
+              "type": "image",
+              "url": "/assets/projects/ipress-conference/agenda-adjust-time.png",
+              "width": "half",
+              "caption": "Adjusted time hierarchy"
+            }
+          ]
+        },
+        "id": "agendaIterateMediaGrid",
+        "type": "mediaGrid"
+      },
+      {
+        "data": {},
+        "id": "dividerBeforeResults",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 1,
+          "text": "Result & Learnings"
+        },
+        "id": "resultsHeading",
+        "type": "heading"
       }
     ]
   },
