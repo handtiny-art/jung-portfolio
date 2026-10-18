@@ -6,7 +6,7 @@ import { asset } from "@/lib/assets";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
 
 // ─── Block Renderers ───────────────────────────────────────────
 
@@ -261,6 +261,31 @@ function RenderBlock({ block }: { block: ContentBlock }) {
             </li>
           ))}
         </ul>
+      );
+    }
+
+    case "link": {
+      const { title, description, href, ctaLabel } = block.data;
+      if (!title || !href) return null;
+      const isInternal = href.startsWith("/");
+      const content = (
+        <div className="my-4 flex items-center justify-between gap-4 rounded-xl border p-4 transition-colors hover:bg-muted/40 cursor-pointer">
+          <div>
+            <div className="font-semibold text-foreground">{title}</div>
+            {description && <div className="text-sm text-muted-foreground mt-1">{description}</div>}
+          </div>
+          <span className="flex items-center gap-1 text-sm font-medium text-primary shrink-0">
+            {ctaLabel ?? "View"}
+            <ArrowRight className="h-4 w-4" />
+          </span>
+        </div>
+      );
+      return isInternal ? (
+        <Link href={href}>{content}</Link>
+      ) : (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
       );
     }
 

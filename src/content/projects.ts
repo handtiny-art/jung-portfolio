@@ -793,15 +793,89 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "level": 3,
-          "text": "Building a New Feature: Agenda Module"
+          "text": "I also designed and shipped a new Agenda Module — a builder that replaces manual Word/PowerPoint conference agendas. It grew into a complete project of its own, so I gave it its own case study."
         },
-        "id": "agendaHeading",
+        "id": "agendaMentionText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "title": "iPress Agenda Module",
+          "description": "Empathize → Ideate → Prototype → Test → Iterate",
+          "href": "/projects/ipress-agenda-module",
+          "ctaLabel": "View case study"
+        },
+        "id": "agendaMentionLink",
+        "type": "link"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "iPress Agenda Module",
+    "slug": "ipress-agenda-module",
+    "summary": "A conference-agenda builder for iPress Conference Platform — replacing manual Word/PowerPoint agendas with a structured, exportable tool.",
+    "description": null,
+    "coverImageUrl": "/assets/projects/ipress-conference/agenda-overview.png",
+    "screenshots": [],
+    "projectUrl": null,
+    "githubUrl": null,
+    "tags": [
+      "B2B2C Saas"
+    ],
+    "published": true,
+    "featured": false,
+    "sortOrder": 0,
+    "blocks": [
+      {
+        "data": {
+          "level": 1,
+          "text": "Project Overview"
+        },
+        "id": "overviewHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "After resolving the existing pain points, I moved on to introducing a new feature. This agenda module project ran through a complete process: empathize, define, ideate, prototype with vibe coding, test, and iterate."
+          "title": "Part of: iPress Conference Platform",
+          "description": "This feature shipped as part of the iPress Conference Platform rebuild.",
+          "href": "/projects/ipress-conference-platform",
+          "ctaLabel": "View platform case study"
+        },
+        "id": "parentProjectLink",
+        "type": "link"
+      },
+      {
+        "data": {
+          "text": "Agenda Module is a conference-agenda builder I designed and shipped for iPress Conference Platform. It has a complete design process of its own — empathize, ideate, prototype, test, and iterate — so it gets its own case study here."
+        },
+        "id": "overviewText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "My Role: Product Manager"
+        },
+        "id": "roleHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "level": 3,
+          "text": "Team: 2 Stakeholders, 2 SA, 1 Engineer, 1 Designer"
+        },
+        "id": "teamHeading",
+        "type": "heading"
+      },
+      {
+        "data": {},
+        "id": "dividerAfterOverview",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "text": "Conferences build their agendas by hand today, usually in Word or PowerPoint — slow to produce, and hard for attendees to parse. I designed and shipped an Agenda Module for iPress Conference Platform, running the full process end to end: empathize, define, ideate, prototype with vibe coding, test, and iterate."
         },
         "id": "agendaIntroText",
         "type": "text"

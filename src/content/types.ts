@@ -15,6 +15,11 @@ export type TableBlock = { id: string; type: "table"; data: { headers: string[];
 export type BadgesBlock = { id: string; type: "badges"; data: { items: string[] } };
 export type StepsBlock = { id: string; type: "steps"; data: { items: { title: string; description: string }[] } };
 export type ListBlock = { id: string; type: "list"; data: { items: { title: string; description?: string }[] } };
+export type LinkBlock = {
+  id: string;
+  type: "link";
+  data: { title: string; description?: string; href: string; ctaLabel?: string };
+};
 
 export type ContentBlock =
   | HeadingBlock
@@ -28,7 +33,8 @@ export type ContentBlock =
   | TableBlock
   | BadgesBlock
   | StepsBlock
-  | ListBlock;
+  | ListBlock
+  | LinkBlock;
 
 export interface Category {
   id: number;
