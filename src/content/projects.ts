@@ -1009,6 +1009,24 @@ export const projects: Project[] = [
         },
         "id": "resultsHeading",
         "type": "heading"
+      },
+      {
+        "data": {
+          "text": "iPress Conference Platform went live to production on March 25, 2026. Since launch, usage has grown from a zero-traffic baseline:"
+        },
+        "id": "resultsIntroText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            { "metric": "Active Users", "value": "5,246", "description": "Since launch, from a zero-traffic baseline (GA4)." },
+            { "metric": "Views", "value": "70K+", "description": "Total pageviews since launch." },
+            { "metric": "Interactions Tracked", "value": "340K+", "description": "GA4 event count — submissions, reviews, agenda browsing, and more." }
+          ]
+        },
+        "id": "resultsMetrics",
+        "type": "metrics"
       }
     ]
   },
