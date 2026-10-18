@@ -394,6 +394,37 @@ export const projects: Project[] = [
       {
         "data": {
           "level": 1,
+          "text": "Impact"
+        },
+        "id": "impactHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "iPress Conference Platform went live to production on March 25, 2026. Since launch, usage has grown from a zero-traffic baseline:"
+        },
+        "id": "impactIntroText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "items": [
+            { "metric": "Active Users", "value": "5,246", "description": "Since launch, from a zero-traffic baseline (GA4)." },
+            { "metric": "Views", "value": "70K+", "description": "Total pageviews since launch." },
+            { "metric": "Interactions Tracked", "value": "340K+", "description": "GA4 event count — submissions, reviews, agenda browsing, and more." }
+          ]
+        },
+        "id": "impactMetrics",
+        "type": "metrics"
+      },
+      {
+        "data": {},
+        "id": "dividerAfterImpact",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 1,
           "text": "Problem Statement: Why Build a New Conference Platform?"
         },
         "id": "problemHeading",
@@ -996,37 +1027,6 @@ export const projects: Project[] = [
         },
         "id": "agendaIterateMediaGrid",
         "type": "mediaGrid"
-      },
-      {
-        "data": {},
-        "id": "dividerBeforeResults",
-        "type": "divider"
-      },
-      {
-        "data": {
-          "level": 1,
-          "text": "Result & Learnings"
-        },
-        "id": "resultsHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "text": "iPress Conference Platform went live to production on March 25, 2026. Since launch, usage has grown from a zero-traffic baseline:"
-        },
-        "id": "resultsIntroText",
-        "type": "text"
-      },
-      {
-        "data": {
-          "items": [
-            { "metric": "Active Users", "value": "5,246", "description": "Since launch, from a zero-traffic baseline (GA4)." },
-            { "metric": "Views", "value": "70K+", "description": "Total pageviews since launch." },
-            { "metric": "Interactions Tracked", "value": "340K+", "description": "GA4 event count — submissions, reviews, agenda browsing, and more." }
-          ]
-        },
-        "id": "resultsMetrics",
-        "type": "metrics"
       }
     ]
   },
