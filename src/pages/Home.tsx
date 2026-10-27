@@ -1,40 +1,21 @@
 import { PageLayout } from "@/components/Layout";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getProjects } from "@/content";
+import { asset } from "@/lib/assets";
 import {
   ArrowRight,
   BookOpen,
-  Briefcase,
   Music,
   Video,
 } from "lucide-react";
 import { Link } from "wouter";
 
-const skillsZh = [
-  "產品策略", "用戶研究", "需求分析", "敏捷開發",
-  "資料分析", "原型設計", "A/B 測試", "跨部門協作",
-  "Figma", "JIRA", "SQL", "產品路線圖",
-];
-
-const skillsEn = [
-  "Product Strategy", "User Research", "Requirements Analysis", "Agile",
-  "Data Analysis", "Prototyping", "A/B Testing", "Cross-functional Collaboration",
-  "Figma", "JIRA", "SQL", "Product Roadmap",
-];
-
 export default function Home() {
-  const { t, lang } = useLanguage();
-  const skills = lang === "zh" ? skillsZh : skillsEn;
+  const { t } = useLanguage();
+  const projects = getProjects();
 
   const sections = [
-    {
-      href: "/projects",
-      icon: Briefcase,
-      title: t.nav.projects,
-      description: t.home.projectsDesc,
-      cta: t.home.viewProjects,
-    },
     {
       href: "/blog",
       icon: BookOpen,
@@ -157,43 +138,6 @@ export default function Home() {
         <div className="guitar-string" />
       </section>
 
-      {/* ── Skills Section ── */}
-      <section className="container py-16">
-        <h2
-          className="text-xs font-bold uppercase tracking-widest mb-6"
-          style={{ color: "oklch(0.58 0.075 52)" }}
-        >
-          {t.home.skills}
-        </h2>
-        <div className="flex flex-wrap gap-2">
-          {skills.map(skill => (
-            <span
-              key={skill}
-              className="px-3 py-1.5 text-sm rounded-md transition-all duration-150 cursor-default"
-              style={{
-                border: "1px solid oklch(0.84 0.030 65)",
-                color: "oklch(0.35 0.06 50)",
-                background: "oklch(0.99 0.012 75)",
-                boxShadow: "0 1px 2px oklch(0.35 0.06 50 / 0.06), inset 0 1px 0 oklch(1 0 0 / 0.7)",
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLSpanElement).style.background = "oklch(0.88 0.055 70 / 0.4)";
-                (e.currentTarget as HTMLSpanElement).style.borderColor = "oklch(0.72 0.115 65 / 0.5)";
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLSpanElement).style.background = "oklch(0.99 0.012 75)";
-                (e.currentTarget as HTMLSpanElement).style.borderColor = "oklch(0.84 0.030 65)";
-              }}
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Guitar string separator */}
-      <div className="container"><div className="guitar-string" /></div>
-
       {/* ── Explore Sections Grid ── */}
       <section className="container py-16">
         <h2
@@ -253,6 +197,114 @@ export default function Home() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Guitar string separator */}
+      <div className="container"><div className="guitar-string" /></div>
+
+      {/* ── Featured Work ── */}
+      <section className="container py-16">
+        <div className="flex items-center justify-between gap-4 mb-8">
+          <h2
+            className="text-xs font-bold uppercase tracking-widest"
+            style={{ color: "oklch(0.58 0.075 52)" }}
+          >
+            {t.home.featuredWork}
+          </h2>
+          <Link
+            href="/projects"
+            className="inline-flex items-center text-sm font-medium transition-colors shrink-0"
+            style={{ color: "oklch(0.45 0.07 50)" }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = "oklch(0.30 0.06 50)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = "oklch(0.45 0.07 50)"; }}
+          >
+            {t.home.viewProjects}
+            <ArrowRight className="ml-1 h-3.5 w-3.5" />
+          </Link>
+        </div>
+
+        <div className="flex flex-col gap-6">
+          {projects.map(project => (
+            <Link
+              key={project.id}
+              href={`/projects/${project.slug}`}
+              className="group block wood-card rounded-3xl p-6 sm:p-10 cursor-pointer"
+            >
+              <div className="grid lg:grid-cols-[1.15fr_1fr] gap-8 items-center">
+                {/* Text */}
+                <div>
+                  <h3
+                    className="text-2xl sm:text-3xl font-bold mb-3"
+                    style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.22 0.03 48)" }}
+                  >
+                    {project.title}
+                  </h3>
+                  {project.summary && (
+                    <p
+                      className="text-base sm:text-lg leading-relaxed mb-5"
+                      style={{ color: "oklch(0.50 0.025 55)" }}
+                    >
+                      {project.summary}
+                    </p>
+                  )}
+                  {Array.isArray(project.tags) && project.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {project.tags.map(tag => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 text-xs font-medium rounded-full"
+                          style={{
+                            background: "oklch(0.88 0.055 70 / 0.4)",
+                            border: "1px solid oklch(0.72 0.115 65 / 0.4)",
+                            color: "oklch(0.35 0.06 50)",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <span
+                    className="inline-flex items-center text-sm font-medium transition-colors"
+                    style={{ color: "oklch(0.45 0.07 50)" }}
+                  >
+                    {t.projects.viewProject}
+                    <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+
+                {/* Image */}
+                <div
+                  className="aspect-video rounded-2xl border overflow-hidden flex items-center justify-center shrink-0"
+                  style={{ borderColor: "oklch(0.84 0.030 65)", background: "oklch(0.99 0.012 75)" }}
+                >
+                  {project.coverImageUrl ? (
+                    <img
+                      src={asset(project.coverImageUrl)}
+                      alt={project.title}
+                      className="w-full h-full object-contain p-6"
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full flex items-center justify-center relative overflow-hidden"
+                      style={{
+                        background: "linear-gradient(135deg, oklch(0.88 0.055 70 / 0.5), oklch(0.82 0.045 60 / 0.4))",
+                        backgroundImage: `repeating-linear-gradient(91deg, transparent, transparent 3px, oklch(0.78 0.055 55 / 0.12) 3px, oklch(0.78 0.055 55 / 0.12) 4px)`,
+                      }}
+                    >
+                      <span
+                        className="text-5xl font-bold"
+                        style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.55 0.065 60 / 0.5)" }}
+                      >
+                        {project.title.charAt(0)}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
     </PageLayout>

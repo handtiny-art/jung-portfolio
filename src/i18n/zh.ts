@@ -21,6 +21,7 @@ export const zh = {
     readBlog: "閱讀文章",
     skills: "技能專長",
     explore: "探索內容",
+    featuredWork: "精選作品",
     projectsDesc: "產品經理專案展示，包含完整的產品設計流程、用戶研究與成果數據。",
     blogDesc: "分享產品思維、業界觀察與個人成長，記錄每一段學習旅程。",
     musicDesc: "原創音樂作品與翻唱，探索聲音的無限可能。",

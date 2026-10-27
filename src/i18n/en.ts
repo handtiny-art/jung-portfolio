@@ -21,6 +21,7 @@ export const en = {
     readBlog: "Read Blog",
     skills: "Skills",
     explore: "Explore",
+    featuredWork: "Featured Work",
     projectsDesc: "PM project showcases with full product design process, user research, and outcome metrics.",
     blogDesc: "Sharing product thinking, industry insights, and personal growth journeys.",
     musicDesc: "Original music and covers — exploring the infinite possibilities of sound.",
