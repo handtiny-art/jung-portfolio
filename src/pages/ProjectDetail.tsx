@@ -417,14 +417,23 @@ function Lightbox({ zoom, onClose }: { zoom: ZoomState; onClose: () => void }) {
 
 function JumpNav({ sections, activeId, className }: { sections: Section[]; activeId: string | null; className?: string }) {
   if (sections.length < 2) return null;
+
+  // Plain `href="#id"` would collide with wouter's hash-based router (every
+  // route already lives at `#/...`), so we scroll manually instead of
+  // letting the browser touch location.hash.
+  const goTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <nav className={className}>
       {sections.map(section => {
         const isActive = section.id === activeId;
         return (
-          <a
+          <button
             key={section.id}
-            href={`#${section.id}`}
+            type="button"
+            onClick={() => goTo(section.id)}
             className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-colors shrink-0"
             style={{
               color: isActive ? "oklch(0.22 0.03 48)" : "oklch(0.52 0.030 52)",
@@ -440,7 +449,7 @@ function JumpNav({ sections, activeId, className }: { sections: Section[]; activ
               }}
             />
             <span className="whitespace-nowrap lg:whitespace-normal lg:leading-snug">{section.title}</span>
-          </a>
+          </button>
         );
       })}
     </nav>
@@ -557,11 +566,8 @@ export default function ProjectDetail() {
       <JumpNav
         sections={sections}
         activeId={activeId}
-        className="lg:hidden sticky top-16 z-30 -mx-4 px-4 mb-6 flex gap-1 overflow-x-auto py-2"
+        className="lg:hidden sticky top-16 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 mb-6 flex gap-1 overflow-x-auto py-2 border-b bg-background"
       />
-      {sections.length >= 2 && (
-        <div className="lg:hidden h-px mb-2" style={{ background: "oklch(0.84 0.030 65)" }} />
-      )}
 
       <div className="lg:grid lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-12">
         {/* Desktop jump nav — sticky sidebar */}
