@@ -1,3 +1,4 @@
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, Link } from "wouter";
 import { getProjectBySlug } from "@/content";
 import type { ContentBlock } from "@/content/types";
@@ -6,16 +7,32 @@ import { asset } from "@/lib/assets";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Github, X, ZoomIn } from "lucide-react";
+
+// ─── Section color coding ──────────────────────────────────────
+// Rotates through a small, brand-harmonious accent palette — one color per
+// top-level (H1) section, used for the jump-nav dot and the section's
+// left-edge accent so a reader can orient at a glance.
+const SECTION_COLORS = [
+  "oklch(0.55 0.15 35)",  // rust
+  "oklch(0.50 0.12 150)", // forest
+  "oklch(0.58 0.13 85)",  // ochre
+  "oklch(0.50 0.10 255)", // slate blue
+  "oklch(0.48 0.12 325)", // plum
+];
+
+type ZoomState = { src: string; alt: string } | null;
 
 // ─── Block Renderers ───────────────────────────────────────────
 
-function RenderBlock({ block }: { block: ContentBlock }) {
+function RenderBlock({ block, onZoom }: { block: ContentBlock; onZoom: (src: string, alt: string) => void }) {
   switch (block.type) {
     case "heading": {
       const { text, level } = block.data;
       if (!text) return null;
       if (level === 1) {
+        // Top-level headings are rendered by the section wrapper instead, so
+        // this case only fires for intro content without a section (rare).
         return (
           <div className="mt-16 mb-5 first:mt-0">
             <h1
@@ -62,13 +79,24 @@ function RenderBlock({ block }: { block: ContentBlock }) {
 
     case "image": {
       if (!block.data.url) return null;
+      const src = asset(block.data.url);
+      const alt = block.data.caption ?? "";
       return (
         <figure className="my-6 flex flex-col items-center">
-          <img
-            src={asset(block.data.url)}
-            alt={block.data.caption ?? ""}
-            className="max-w-full max-h-[560px] w-auto h-auto object-contain rounded-xl border"
-          />
+          <button
+            type="button"
+            onClick={() => onZoom(src, alt)}
+            className="group relative max-w-full rounded-xl border overflow-hidden cursor-zoom-in"
+          >
+            <img
+              src={src}
+              alt={alt}
+              className="max-w-full max-h-[560px] w-auto h-auto object-contain"
+            />
+            <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-colors">
+              <ZoomIn className="h-6 w-6 text-white opacity-0 group-hover:opacity-90 drop-shadow transition-opacity" />
+            </span>
+          </button>
           {block.data.caption && (
             <figcaption className="text-center text-sm text-muted-foreground mt-2">{block.data.caption}</figcaption>
           )}
@@ -138,18 +166,31 @@ function RenderBlock({ block }: { block: ContentBlock }) {
 
       return (
         <div className="my-4 flex flex-wrap gap-4">
-          {items.map((item) => (
-            <div key={item.id} className={`${widthMap[item.width]} flex flex-col`}>
-              {item.type === "image" ? (
-                <img src={asset(item.url)} alt={item.caption ?? ""} className="w-full h-auto rounded-xl border" />
-              ) : (
-                <video src={asset(item.url)} className="w-full h-auto rounded-xl border" controls />
-              )}
-              {item.caption && (
-                <figcaption className="text-center text-sm text-muted-foreground mt-2">{item.caption}</figcaption>
-              )}
-            </div>
-          ))}
+          {items.map((item) => {
+            const src = asset(item.url);
+            const alt = item.caption ?? "";
+            return (
+              <div key={item.id} className={`${widthMap[item.width]} flex flex-col`}>
+                {item.type === "image" ? (
+                  <button
+                    type="button"
+                    onClick={() => onZoom(src, alt)}
+                    className="group relative rounded-xl border overflow-hidden cursor-zoom-in"
+                  >
+                    <img src={src} alt={alt} className="w-full h-auto" />
+                    <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-colors">
+                      <ZoomIn className="h-5 w-5 text-white opacity-0 group-hover:opacity-90 drop-shadow transition-opacity" />
+                    </span>
+                  </button>
+                ) : (
+                  <video src={src} className="w-full h-auto rounded-xl border" controls />
+                )}
+                {item.caption && (
+                  <figcaption className="text-center text-sm text-muted-foreground mt-2">{item.caption}</figcaption>
+                )}
+              </div>
+            );
+          })}
         </div>
       );
     }
@@ -294,6 +335,118 @@ function RenderBlock({ block }: { block: ContentBlock }) {
   }
 }
 
+// ─── Section grouping ──────────────────────────────────────────
+// Splits the flat block list into top-level (H1) sections so each one can
+// get its own jump-nav entry, color accent, and anchor.
+
+type Section = { id: string; title: string; color: string; blocks: ContentBlock[] };
+
+function groupIntoSections(blocks: ContentBlock[]): { intro: ContentBlock[]; sections: Section[] } {
+  const intro: ContentBlock[] = [];
+  const sections: Section[] = [];
+  let current: Section | null = null;
+  let colorIdx = 0;
+
+  for (const block of blocks) {
+    if (block.type === "heading" && block.data.level === 1 && block.data.text) {
+      current = {
+        id: block.id,
+        title: block.data.text,
+        color: SECTION_COLORS[colorIdx % SECTION_COLORS.length],
+        blocks: [],
+      };
+      colorIdx++;
+      sections.push(current);
+    } else if (current) {
+      current.blocks.push(block);
+    } else {
+      intro.push(block);
+    }
+  }
+
+  return { intro, sections };
+}
+
+// ─── Lightbox ───────────────────────────────────────────────────
+
+function Lightbox({ zoom, onClose }: { zoom: ZoomState; onClose: () => void }) {
+  useEffect(() => {
+    if (!zoom) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [zoom, onClose]);
+
+  if (!zoom) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-10"
+      style={{ background: "oklch(0.1 0 0 / 0.85)" }}
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full flex items-center justify-center text-white"
+        style={{ background: "oklch(1 0 0 / 0.12)" }}
+        aria-label="Close"
+      >
+        <X className="h-5 w-5" />
+      </button>
+      <img
+        src={zoom.src}
+        alt={zoom.alt}
+        onClick={e => e.stopPropagation()}
+        className="max-w-full max-h-[88vh] rounded-lg shadow-2xl cursor-zoom-out"
+      />
+      {zoom.alt && (
+        <p className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 text-sm text-white/70 text-center px-4">
+          {zoom.alt}
+        </p>
+      )}
+    </div>
+  );
+}
+
+// ─── Jump nav ───────────────────────────────────────────────────
+
+function JumpNav({ sections, activeId, className }: { sections: Section[]; activeId: string | null; className?: string }) {
+  if (sections.length < 2) return null;
+  return (
+    <nav className={className}>
+      {sections.map(section => {
+        const isActive = section.id === activeId;
+        return (
+          <a
+            key={section.id}
+            href={`#${section.id}`}
+            className="flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition-colors shrink-0"
+            style={{
+              color: isActive ? "oklch(0.22 0.03 48)" : "oklch(0.52 0.030 52)",
+              fontWeight: isActive ? 600 : 500,
+              background: isActive ? "oklch(0.91 0.022 66)" : "transparent",
+            }}
+          >
+            <span
+              className="w-2 h-2 rounded-full shrink-0"
+              style={{
+                background: section.color,
+                boxShadow: isActive ? `0 0 0 3px color-mix(in oklch, ${section.color} 20%, transparent)` : "none",
+              }}
+            />
+            <span className="whitespace-nowrap lg:whitespace-normal lg:leading-snug">{section.title}</span>
+          </a>
+        );
+      })}
+    </nav>
+  );
+}
+
 // ─── Main page ─────────────────────────────────────────────────
 
 export default function ProjectDetail() {
@@ -302,6 +455,35 @@ export default function ProjectDetail() {
   const zh = lang === "zh";
 
   const project = slug ? getProjectBySlug(slug) : null;
+  const blocks = useMemo(() => (project && Array.isArray(project.blocks) ? project.blocks : []), [project]);
+  const { intro, sections } = useMemo(() => groupIntoSections(blocks), [blocks]);
+
+  const [zoom, setZoom] = useState<ZoomState>(null);
+  const [activeId, setActiveId] = useState<string | null>(sections[0]?.id ?? null);
+  const onZoom = (src: string, alt: string) => setZoom({ src, alt });
+
+  const sectionIdsKey = sections.map(s => s.id).join(",");
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    if (sections.length < 2) return;
+    observerRef.current?.disconnect();
+    const observer = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        }
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+    );
+    sections.forEach(s => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+    observerRef.current = observer;
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sectionIdsKey]);
 
   if (!project) {
     return (
@@ -314,10 +496,8 @@ export default function ProjectDetail() {
     );
   }
 
-  const blocks = Array.isArray(project.blocks) ? project.blocks : [];
-
   return (
-    <div className="container max-w-3xl py-10">
+    <div className="container max-w-5xl py-10">
       {/* Back link */}
       <Link href="/projects" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
         <ArrowLeft className="h-4 w-4" />
@@ -373,32 +553,77 @@ export default function ProjectDetail() {
 
       <Separator className="mb-8" />
 
-      {/* Blocks content */}
-      {blocks.length > 0 ? (
-        <div className="space-y-2">
-          {blocks.map(block => (
-            <RenderBlock key={block.id} block={block} />
-          ))}
-        </div>
-      ) : project.description ? (
-        <div className="prose prose-neutral max-w-none">
-          <p className="text-base leading-relaxed text-foreground/80 whitespace-pre-wrap">{project.description}</p>
-        </div>
-      ) : (
-        <p className="text-muted-foreground text-sm">{zh ? "此作品尚未填寫詳細內容。" : "No detailed content yet."}</p>
+      {/* Mobile jump nav — sticky horizontal pill bar */}
+      <JumpNav
+        sections={sections}
+        activeId={activeId}
+        className="lg:hidden sticky top-16 z-30 -mx-4 px-4 mb-6 flex gap-1 overflow-x-auto py-2"
+      />
+      {sections.length >= 2 && (
+        <div className="lg:hidden h-px mb-2" style={{ background: "oklch(0.84 0.030 65)" }} />
       )}
 
-      {/* Screenshots */}
-      {Array.isArray(project.screenshots) && project.screenshots.length > 0 && (
-        <div className="mt-10">
-          <h2 className="text-xl font-semibold mb-4">{zh ? "截圖" : "Screenshots"}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {project.screenshots.map((url, idx) => (
-              <img key={idx} src={asset(url)} alt={`screenshot-${idx + 1}`} className="rounded-xl border object-cover w-full" />
-            ))}
-          </div>
+      <div className="lg:grid lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-12">
+        {/* Desktop jump nav — sticky sidebar */}
+        <JumpNav
+          sections={sections}
+          activeId={activeId}
+          className="hidden lg:flex lg:flex-col lg:gap-1 lg:sticky lg:top-24 lg:self-start"
+        />
+
+        {/* Content */}
+        <div className="min-w-0">
+          {blocks.length > 0 ? (
+            <div className="space-y-2">
+              {intro.map(block => (
+                <RenderBlock key={block.id} block={block} onZoom={onZoom} />
+              ))}
+              {sections.map(section => (
+                <section
+                  key={section.id}
+                  id={section.id}
+                  className="scroll-mt-32 mt-16 first:mt-0 pl-5 -ml-5 border-l-2"
+                  style={{ borderColor: `color-mix(in oklch, ${section.color} 55%, transparent)` }}
+                >
+                  <h1
+                    className="text-3xl font-bold mb-5"
+                    style={{ fontFamily: "'Playfair Display', serif", color: "oklch(0.22 0.03 48)" }}
+                  >
+                    {section.title}
+                  </h1>
+                  <div className="space-y-2">
+                    {section.blocks.map(block => (
+                      <RenderBlock key={block.id} block={block} onZoom={onZoom} />
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          ) : project.description ? (
+            <div className="prose prose-neutral max-w-none">
+              <p className="text-base leading-relaxed text-foreground/80 whitespace-pre-wrap">{project.description}</p>
+            </div>
+          ) : (
+            <p className="text-muted-foreground text-sm">{zh ? "此作品尚未填寫詳細內容。" : "No detailed content yet."}</p>
+          )}
+
+          {/* Screenshots */}
+          {Array.isArray(project.screenshots) && project.screenshots.length > 0 && (
+            <div className="mt-10">
+              <h2 className="text-xl font-semibold mb-4">{zh ? "截圖" : "Screenshots"}</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {project.screenshots.map((url, idx) => (
+                  <button key={idx} type="button" onClick={() => onZoom(asset(url), `screenshot-${idx + 1}`)} className="cursor-zoom-in">
+                    <img src={asset(url)} alt={`screenshot-${idx + 1}`} className="rounded-xl border object-cover w-full" />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      </div>
+
+      <Lightbox zoom={zoom} onClose={() => setZoom(null)} />
     </div>
   );
 }

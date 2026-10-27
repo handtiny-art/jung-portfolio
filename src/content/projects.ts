@@ -21,14 +21,14 @@ export const projects: Project[] = [
           "level": 1,
           "text": "Project Overview"
         },
-        "id": "oFHEbzrP",
+        "id": "overviewHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "Cited-by Notification is a feature based on iPress to help scholars stay updated when their works are cited by new publications."
+          "text": "Cited-by Notification is a feature built on iPress to help scholars stay updated when their work is cited by new publications."
         },
-        "id": "2DWby4z-",
+        "id": "overviewText",
         "type": "text"
       },
       {
@@ -36,7 +36,7 @@ export const projects: Project[] = [
           "level": 3,
           "text": "My Role: Product Manager"
         },
-        "id": "FGRyooWG",
+        "id": "roleHeading",
         "type": "heading"
       },
       {
@@ -44,15 +44,15 @@ export const projects: Project[] = [
           "level": 3,
           "text": "Timeline: 2024 Q4 - 2025 Q1"
         },
-        "id": "UhD_rq8k",
+        "id": "timelineHeading",
         "type": "heading"
       },
       {
         "data": {
           "level": 3,
-          "text": "Team: 1 Stakeholder, 1 SA, 1 engineers, 1 designer"
+          "text": "Team: 1 Stakeholder, 1 SA, 1 Engineer, 1 Designer"
         },
-        "id": "PvQ9eaaZ",
+        "id": "teamHeading",
         "type": "heading"
       },
       {
@@ -60,14 +60,14 @@ export const projects: Project[] = [
           "level": 3,
           "text": "My Responsibilities"
         },
-        "id": "MG0BDcv8",
+        "id": "responsibilitiesHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "・Wrote PRD and defined user flow for notification triggers.\n・Designed email templates and defined notification timing.\n・Conducted QA verification before release and tracked initial usage data."
+          "text": "・Wrote the PRD and defined the user flow for notification triggers.\n・Designed email templates and defined notification timing.\n・Conducted QA verification before release and tracked initial usage data."
         },
-        "id": "KbdSeKlA",
+        "id": "responsibilitiesText",
         "type": "text"
       },
       {
@@ -75,76 +75,68 @@ export const projects: Project[] = [
           "level": 1,
           "text": "Impact"
         },
-        "id": "f2UosyuV",
+        "id": "impactHeading",
         "type": "heading"
       },
       {
         "data": {
           "items": [
             {
-              "metric": "publishes reached / per season",
+              "metric": "Publishers Reached / Season",
               "value": "90"
             },
             {
-              "metric": "scholars reached / per season",
+              "metric": "Scholars Reached / Season",
               "value": "150"
             }
           ]
         },
-        "id": "ujMjePaQ",
+        "id": "impactMetrics",
         "type": "metrics"
       },
       {
         "data": {
           "level": 1,
-          "text": "What is Cited-by and Why Does It Matters in Academic Field?"
+          "text": "Problem"
         },
-        "id": "K8DkX2ji",
+        "id": "problemHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "In academic publishing, citations are a key indicator of a scholar’s impact and contribution. They influence career development, funding opportunities, and academic reputation."
+          "text": "In academic publishing, citations are a key indicator of a scholar's impact and contribution — they influence career development, funding opportunities, and academic reputation."
         },
-        "id": "nx0_EfuH",
+        "id": "problemContextText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "text": "In Taiwan's academic field, authors could only track citations by manually checking academic databases — a process that was time-consuming and often delayed by months."
+        },
+        "id": "problemStatementText",
+        "type": "text"
+      },
+      {
+        "data": {
+          "level": 1,
+          "text": "Solution"
+        },
+        "id": "solutionHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "text": "We designed an automated, quarterly citation notification service that aggregates new citation events and sends a summary email to authors and collaborating publishers, helping scholars stay informed about their academic impact."
+        },
+        "id": "solutionText",
         "type": "text"
       },
       {
         "data": {
           "level": 2,
-          "text": "Problem Statement"
+          "text": "Vision: An Interconnected Academic Ecosystem"
         },
-        "id": "Bq3jX5yz",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "text": "Before in Taiwan academic field, authors could only track their citations by manually checking academic databases This manual process was time-consuming and often delayed by months."
-        },
-        "id": "nD4qeW98",
-        "type": "text"
-      },
-      {
-        "data": {
-          "level": 2,
-          "text": "Our Solution"
-        },
-        "id": "36Z_OVMi",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "text": "Therefore, we designed an automated, quarterly citation notification service that aggregates new citation events and sends a summary email to authors and collaborating publishers, helping scholars stay informed about their academic impact "
-        },
-        "id": "tIGVtcuk",
-        "type": "text"
-      },
-      {
-        "data": {
-          "level": 2,
-          "text": "Our Vision: Building an Interconnected Academic Ecosystem"
-        },
-        "id": "DkwAS7FL",
+        "id": "visionHeading",
         "type": "heading"
       },
       {
@@ -152,27 +144,22 @@ export const projects: Project[] = [
           "caption": "",
           "url": "/assets/projects/1779759987667-f1p5fjesmvi_d1ac0bfd.png"
         },
-        "id": "fau8PvKU",
+        "id": "visionImage",
         "type": "image"
       },
       {
         "data": {
-          "text": "- Mission: Break down data silos between our two core platforms—iPress (submission system) and airiti DOI (registration service)—to build an interconnected academic ecosystem.\n\n- The Problem: Once a paper is published, scholars and editors rarely receive real-time updates when their work is cited by others, creating a gap in engagement.\n\n- The Solution: By seamlessly connecting the data streams of iPress and DOI, we built an automated \"Cited-by Notification\" feature. Now, whenever a publication gets cited, both the original author (Scholar) and the journal team (Editors) are instantly notified, significantly increasing user retention and driving continuous engagement within our ecosystem."
+          "text": "Mission: Break down data silos between iPress (submission system) and airiti DOI (registration service) to build an interconnected academic ecosystem. By connecting their data streams, both the original author and the journal team are instantly notified whenever a publication is cited — turning a passive, invisible signal into real-time engagement."
         },
-        "id": "EpMRQiH_",
+        "id": "visionText",
         "type": "text"
-      },
-      {
-        "data": {},
-        "id": "wvqLnliu",
-        "type": "divider"
       },
       {
         "data": {
           "level": 1,
-          "text": "Design Process: How We Build Cited-by Notification?"
+          "text": "Approach"
         },
-        "id": "Aeub-JXx",
+        "id": "approachHeading",
         "type": "heading"
       },
       {
@@ -180,7 +167,7 @@ export const projects: Project[] = [
           "level": 2,
           "text": "Bridging Two Distinct Products"
         },
-        "id": "aVP19DxO",
+        "id": "bridgingHeading",
         "type": "heading"
       },
       {
@@ -188,14 +175,14 @@ export const projects: Project[] = [
           "caption": "",
           "url": "/assets/projects/1779762235054-swr2k8ln5tc_213c1d60.png"
         },
-        "id": "QKV2TvbT",
+        "id": "bridgingImage",
         "type": "image"
       },
       {
         "data": {
-          "text": "To build the \"Cited-by Notification\" ecosystem, the primary challenge was to integrate two products with completely different user bases and data structures within the parent company.\n\n- iPress: An all-in-one academic publishing management platform (Focuses on workflow/submission).\n\n- airiti DOI: A persistent identifier system assigned to scholarly works (Focuses on data/indexing).\n\nThis integration was not just a technical linkage, but a strategic move to unlock the synergy between our workflow tool (iPress) and our data asset (DOI), creating a closed-loop ecosystem."
+          "text": "To build the Cited-by Notification ecosystem, the primary challenge was integrating two products with completely different user bases and data structures within the parent company.\n\n- iPress: an all-in-one academic publishing management platform (focuses on workflow/submission).\n\n- airiti DOI: a persistent identifier system assigned to scholarly works (focuses on data/indexing).\n\nThis integration was not just a technical linkage, but a strategic move to unlock the synergy between our workflow tool (iPress) and our data asset (DOI), creating a closed-loop ecosystem."
         },
-        "id": "yjCO7EIT",
+        "id": "bridgingText",
         "type": "text"
       },
       {
@@ -203,7 +190,7 @@ export const projects: Project[] = [
           "level": 2,
           "text": "Data Pipeline & Operation Workflow"
         },
-        "id": "QG_REmAC",
+        "id": "pipelineHeading",
         "type": "heading"
       },
       {
@@ -211,14 +198,14 @@ export const projects: Project[] = [
           "caption": "",
           "url": "/assets/projects/1779763002889-zb9qxbnux2n_0d559b54.png"
         },
-        "id": "Oxbs1ubS",
+        "id": "pipelineImage",
         "type": "image"
       },
       {
         "data": {
-          "text": "To make the \"Cited-by Notification\" work, we designed a 3-step operational workflow that automates data retrieval, calculation, and delivery on a quarterly basis.\n\nStep 1: Data Retrieval\nThe system monitors and extracts new citation footprints from published works, then maps and matches these external DOI records back to our internal iPress article database.\n\nStep 2: Data Calculation\nInstead of sending raw, cluttered data, the system processes the database to compile and calculate the precise \"Citation Counts\" for each article during the quarter.\n\nStep 3: Segmented Delivery\nOnce the citation counts are calculated, the system automatically triggers custom citation emails based on the product tier:\n\n・Standard Service: Dispatches comprehensive updates to Publishers to track journal performance.\n\n・Premium Service: Extends the reach by sending personalized impact alerts directly to individual Authors (Scholars)."
+          "text": "To make Cited-by Notification work, we designed a 3-step operational workflow that automates data retrieval, calculation, and delivery on a quarterly basis.\n\nStep 1: Data Retrieval\nThe system monitors and extracts new citation footprints from published works, then maps and matches these external DOI records back to our internal iPress article database.\n\nStep 2: Data Calculation\nInstead of sending raw, cluttered data, the system processes the database to compile and calculate the precise \"Citation Counts\" for each article during the quarter.\n\nStep 3: Segmented Delivery\nOnce the citation counts are calculated, the system automatically triggers custom citation emails based on the product tier:\n\n・Standard Service: dispatches comprehensive updates to Publishers to track journal performance.\n\n・Premium Service: extends the reach by sending personalized impact alerts directly to individual Authors (Scholars)."
         },
-        "id": "qlyIImfk",
+        "id": "pipelineText",
         "type": "text"
       },
       {
@@ -226,7 +213,7 @@ export const projects: Project[] = [
           "level": 2,
           "text": "User-Centric Email Design"
         },
-        "id": "lj6MqLCd",
+        "id": "emailDesignHeading",
         "type": "heading"
       },
       {
@@ -234,65 +221,60 @@ export const projects: Project[] = [
           "level": 3,
           "text": "Design Interface for Different Target Customers"
         },
-        "id": "htXZlmN3",
+        "id": "emailDesignSubheading",
         "type": "heading"
       },
       {
         "data": {
           "items": [
             {
-              "caption": "・Publisher Letter",
-              "id": "Wl3qPlNI",
+              "id": "publisherLetter",
               "type": "image",
               "url": "/assets/projects/1779765475564-ofpl0p4dqc_cee46203.png",
-              "width": "half"
+              "width": "half",
+              "caption": "・Publisher Letter"
             },
             {
-              "caption": "・Scholar Letter",
-              "id": "AkESVAxO",
+              "id": "scholarLetter",
               "type": "image",
               "url": "/assets/projects/1779765486080-2lfc7tissee_4e548ebd.png",
-              "width": "half"
+              "width": "half",
+              "caption": "・Scholar Letter"
             }
           ]
         },
-        "id": "rHOMJx0e",
+        "id": "emailDesignMediaGrid",
         "type": "mediaGrid"
       },
       {
         "data": {
           "columns": [
             {
-              "content": "。Objective: To provide a macro-level overview for journal editors.\n\n。Key Design: Highlights the ”total growth volume“ at the top for quick reporting, followed by a consolidated list of which external papers cited this journal's articles this quarter. It includes direct DOI links to help editors track their journal's expanding impact.",
-              "heading": "The Publisher Letter (Left))"
+              "heading": "The Publisher Letter (Left)",
+              "content": "。Objective: To provide a macro-level overview for journal editors.\n\n。Key Design: Highlights the ”total growth volume“ at the top for quick reporting, followed by a consolidated list of which external papers cited this journal's articles this quarter. It includes direct DOI links to help editors track their journal's expanding impact."
             },
             {
-              "content": "。Objective: To deliver a personalized, emotionally rewarding impact report for individual researchers.\n\n。Key Design: Uses a 2-column structure that directly maps \"Your Article\" ⭢ \"Who Cited You\". This clear cross-reference instantly shows the scholar their direct contribution to the academic field, paired with an easy-to-access customer support footer to build trust.",
-              "heading": "The Scholar Letter (Right)"
+              "heading": "The Scholar Letter (Right)",
+              "content": "。Objective: To deliver a personalized, emotionally rewarding impact report for individual researchers.\n\n。Key Design: Uses a 2-column structure that directly maps \"Your Article\" ⭢ \"Who Cited You\". This clear cross-reference instantly shows the scholar their direct contribution to the academic field, paired with an easy-to-access customer support footer to build trust."
             }
           ]
         },
-        "id": "bElG62cv",
+        "id": "emailDesignCols",
         "type": "columns"
-      },
-      {
-        "data": {},
-        "id": "qnjgxcrB",
-        "type": "divider"
       },
       {
         "data": {
           "level": 1,
-          "text": "Result: Cited-by Made Invisible become Visible"
+          "text": "Results & Learnings"
         },
-        "id": "GndJQt_w",
+        "id": "resultsHeading",
         "type": "heading"
       },
       {
         "data": {
-          "text": "In the long run, the Cited-by feature will continue to create value for scholars, publishers, and the company in the following ways:"
+          "text": "In the long run, the Cited-by feature creates ongoing value for scholars, publishers, and the company:"
         },
-        "id": "d9_xHejC",
+        "id": "resultsIntroText",
         "type": "text"
       },
       {
@@ -300,18 +282,25 @@ export const projects: Project[] = [
           "headers": [
             "To Scholars",
             "To Publishers",
-            "To the company"
+            "To the Company"
           ],
           "rows": [
             [
-              "The Cited-by can increase scholar’s awareness of their impact and their engagement to the academic environment.",
-              "Many publishers are eager to learn their credibility so as to attract more contributions, Cited-by notification provide a better and timely way for publishers to track their impacts.",
-              "For the parent company, Cited-by Notification serves as a differentiated and irreplaceable service that leverages our DOI-based technology to set iPress apart from competing products."
+              "Cited-by increases scholars' awareness of their impact and their engagement with the academic environment.",
+              "Many publishers want to track their credibility to attract more contributions — Cited-by gives them a timely way to see their impact.",
+              "Cited-by Notification is a differentiated, hard-to-replicate service that leverages our DOI-based technology to set iPress apart from competing products."
             ]
           ]
         },
-        "id": "NMpjDOtK",
+        "id": "resultsTable",
         "type": "table"
+      },
+      {
+        "data": {
+          "text": "Learnings: the hardest part wasn't the email templates — it was resolving DOI-to-article matching across two systems that were never designed to talk to each other. Solving that data problem first is what made the notification feature possible at all."
+        },
+        "id": "learningsText",
+        "type": "text"
       }
     ]
   },
