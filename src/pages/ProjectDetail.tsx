@@ -557,23 +557,28 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="container max-w-5xl py-10">
-      {/* Back link */}
-      <Link href="/projects" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
-        <ArrowLeft className="h-4 w-4" />
-        {zh ? "返回作品集" : "Back to Projects"}
-      </Link>
-
-      {/* Cover image */}
+    <>
+      {/* Cover image — full-bleed (breaks out of the container to the full
+          viewport width) and scrolls away normally with the rest of the
+          page, like any other block; it's not sticky or pinned. */}
       {project.coverImageUrl && (
-        <img
-          src={asset(project.coverImageUrl)}
-          alt={project.title}
-          className="w-full h-64 sm:h-80 object-cover rounded-2xl mb-8 border"
-        />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen">
+          <img
+            src={asset(project.coverImageUrl)}
+            alt={project.title}
+            className="w-full h-72 sm:h-96 lg:h-[28rem] object-cover"
+          />
+        </div>
       )}
 
-      {/* Header */}
+      <div className="container max-w-5xl py-10">
+        {/* Back link */}
+        <Link href="/projects" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <ArrowLeft className="h-4 w-4" />
+          {zh ? "返回作品集" : "Back to Projects"}
+        </Link>
+
+        {/* Header */}
       <header className="mb-6">
         <h1 className="text-3xl sm:text-4xl font-bold mb-3">{project.title}</h1>
 
@@ -681,6 +686,7 @@ export default function ProjectDetail() {
       </div>
 
       <Lightbox zoom={zoom} onClose={() => setZoom(null)} />
-    </div>
+      </div>
+    </>
   );
 }
