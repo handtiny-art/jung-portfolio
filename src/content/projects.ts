@@ -742,36 +742,6 @@ export const projects: Project[] = [
         },
         "id": "improvement2Metrics",
         "type": "metrics"
-      },
-      {
-        "data": {},
-        "id": "dividerBeforeNew",
-        "type": "divider"
-      },
-      {
-        "data": {
-          "level": 2,
-          "text": "Introducing New"
-        },
-        "id": "introducingNewHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "text": "I also designed and shipped a new Agenda Module — a builder that replaces manual Word/PowerPoint conference agendas. It grew into a complete project of its own, so I gave it its own case study."
-        },
-        "id": "agendaMentionText",
-        "type": "text"
-      },
-      {
-        "data": {
-          "title": "iPress Agenda Module",
-          "description": "Empathize → Ideate → Prototype → Test → Iterate",
-          "href": "/projects/ipress-agenda-module",
-          "ctaLabel": "View case study"
-        },
-        "id": "agendaMentionLink",
-        "type": "link"
       }
     ]
   },
@@ -788,7 +758,7 @@ export const projects: Project[] = [
     "tags": [
       "B2B2C Saas"
     ],
-    "published": true,
+    "published": false,
     "featured": false,
     "sortOrder": 0,
     "blocks": [
