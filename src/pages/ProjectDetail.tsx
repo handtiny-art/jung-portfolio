@@ -545,6 +545,34 @@ export default function ProjectDetail() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionIdsKey]);
 
+  // Fade the cover hero out (and drift it slightly, for a soft parallax)
+  // as the page scrolls past it. Writes directly to the DOM via a ref
+  // rather than React state, so it doesn't re-render on every scroll tick.
+  const heroRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const h = el.offsetHeight || 1;
+      const progress = Math.min(window.scrollY / h, 1);
+      el.style.opacity = String(1 - progress);
+      el.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [project?.coverImageUrl]);
+
   if (!project) {
     return (
       <div className="container max-w-3xl py-16 text-center">
@@ -562,7 +590,7 @@ export default function ProjectDetail() {
           viewport width) and scrolls away normally with the rest of the
           page, like any other block; it's not sticky or pinned. */}
       {project.coverImageUrl && (
-        <div className="relative left-1/2 -translate-x-1/2 w-screen">
+        <div ref={heroRef} className="relative left-1/2 -translate-x-1/2 w-screen" style={{ willChange: "opacity, transform" }}>
           <img
             src={asset(project.coverImageUrl)}
             alt={project.title}
