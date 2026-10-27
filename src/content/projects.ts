@@ -7,7 +7,7 @@ export const projects: Project[] = [
     "slug": "cited-by-notification-service",
     "summary": "Cited-by Notification is a feature based on iPress to help scholars stay updated when their works are cited by new publications.",
     "description": null,
-    "coverImageUrl": null,
+    "coverImageUrl": "/assets/projects/cited-by-notification/cover.png",
     "screenshots": [],
     "projectUrl": null,
     "githubUrl": null,
