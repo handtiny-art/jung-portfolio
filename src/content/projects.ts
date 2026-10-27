@@ -33,42 +33,18 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "level": 3,
-          "text": "My Role: Product Manager"
+          "role": "Product Manager",
+          "timeline": "2024 Q4 - 2025 Q1",
+          "team": "1 Stakeholder, 1 SA, 1 Engineer, 1 Designer",
+          "responsibilitiesTitle": "My Responsibilities",
+          "responsibilities": [
+            "Wrote the PRD and defined the user flow for notification triggers.",
+            "Designed email templates and defined notification timing.",
+            "Conducted QA verification before release and tracked initial usage data."
+          ]
         },
-        "id": "roleHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "level": 3,
-          "text": "Timeline: 2024 Q4 - 2025 Q1"
-        },
-        "id": "timelineHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "level": 3,
-          "text": "Team: 1 Stakeholder, 1 SA, 1 Engineer, 1 Designer"
-        },
-        "id": "teamHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "level": 3,
-          "text": "My Responsibilities"
-        },
-        "id": "responsibilitiesHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "text": "・Wrote the PRD and defined the user flow for notification triggers.\n・Designed email templates and defined notification timing.\n・Conducted QA verification before release and tracked initial usage data."
-        },
-        "id": "responsibilitiesText",
-        "type": "text"
+        "id": "overviewMeta",
+        "type": "overviewMeta"
       },
       {
         "data": {

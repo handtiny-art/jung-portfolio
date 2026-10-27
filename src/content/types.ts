@@ -20,6 +20,17 @@ export type LinkBlock = {
   type: "link";
   data: { title: string; description?: string; href: string; ctaLabel?: string };
 };
+export type OverviewMetaBlock = {
+  id: string;
+  type: "overviewMeta";
+  data: {
+    role?: string;
+    timeline?: string;
+    team?: string;
+    responsibilitiesTitle?: string;
+    responsibilities: string[];
+  };
+};
 
 export type ContentBlock =
   | HeadingBlock
@@ -34,7 +45,8 @@ export type ContentBlock =
   | BadgesBlock
   | StepsBlock
   | ListBlock
-  | LinkBlock;
+  | LinkBlock
+  | OverviewMetaBlock;
 
 export interface Category {
   id: number;

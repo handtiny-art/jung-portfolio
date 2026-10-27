@@ -330,6 +330,57 @@ function RenderBlock({ block, onZoom }: { block: ContentBlock; onZoom: (src: str
       );
     }
 
+    case "overviewMeta": {
+      const { role, timeline, team, responsibilitiesTitle, responsibilities } = block.data;
+      const metaRows = [
+        { label: "Role", value: role },
+        { label: "Timeline", value: timeline },
+        { label: "Team", value: team },
+      ].filter(row => row.value);
+      const items = (responsibilities ?? []).filter(Boolean);
+      if (!metaRows.length && !items.length) return null;
+
+      return (
+        <div className="grid sm:grid-cols-2 gap-x-10 gap-y-6 my-6">
+          {metaRows.length > 0 && (
+            <div className="space-y-5">
+              {metaRows.map(row => (
+                <div key={row.label}>
+                  <div
+                    className="text-xs font-bold uppercase tracking-widest mb-1"
+                    style={{ color: "oklch(0.58 0.075 52)" }}
+                  >
+                    {row.label}
+                  </div>
+                  <div className="text-base text-foreground/90">{row.value}</div>
+                </div>
+              ))}
+            </div>
+          )}
+          {items.length > 0 && (
+            <div>
+              {responsibilitiesTitle && (
+                <div
+                  className="text-xs font-bold uppercase tracking-widest mb-3"
+                  style={{ color: "oklch(0.58 0.075 52)" }}
+                >
+                  {responsibilitiesTitle}
+                </div>
+              )}
+              <ul className="space-y-2.5">
+                {items.map((item, idx) => (
+                  <li key={idx} className="flex gap-2.5">
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "oklch(0.58 0.075 52)" }} />
+                    <span className="text-base text-foreground/90 leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      );
+    }
+
     default:
       return null;
   }
