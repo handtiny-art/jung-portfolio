@@ -1035,7 +1035,7 @@ export const projects: Project[] = [
     "slug": "youtubetovocab",
     "summary": "An innovative learning app which helps learners build flashcards in a very efficient way.",
     "description": null,
-    "coverImageUrl": "/assets/projects/1779192029972-kq5wvkam7a_40b8ba49.jpg",
+    "coverImageUrl": "/assets/projects/youtubetovocab/cover.png",
     "screenshots": [],
     "projectUrl": null,
     "githubUrl": null,
