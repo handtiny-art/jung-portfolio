@@ -11,7 +11,10 @@ export const projects: Project[] = [
     "screenshots": [],
     "projectUrl": null,
     "githubUrl": null,
-    "tags": [],
+    "tags": [
+      "B2B2C SaaS Service",
+      "Cross-Product Collaboration"
+    ],
     "published": true,
     "featured": false,
     "sortOrder": 0,
