@@ -446,22 +446,6 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "level": 1,
-          "text": "Collaboration"
-        },
-        "id": "collabHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "level": 2,
-          "text": "Establish the Same Vision for the Product Team"
-        },
-        "id": "collabVisionHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
           "level": 3,
           "text": "1. Illustrate with a Swimlane Diagram"
         },
