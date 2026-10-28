@@ -1042,7 +1042,8 @@ export const projects: Project[] = [
     "tags": [
       "Vibe coding",
       "Education",
-      "Language learning"
+      "Language learning",
+      "Side project"
     ],
     "published": true,
     "featured": false,
