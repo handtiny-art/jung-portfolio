@@ -390,7 +390,7 @@ export const projects: Project[] = [
       {
         "data": {
           "level": 1,
-          "text": "Problem Statement: Why Build a New Conference Platform?"
+          "text": "Problem Statement"
         },
         "id": "problemHeading",
         "type": "heading"
@@ -577,7 +577,7 @@ export const projects: Project[] = [
       {
         "data": {
           "level": 1,
-          "text": "Design & Decision — Improving Old and Introducing New"
+          "text": "Design & Decision"
         },
         "id": "designHeading",
         "type": "heading"
