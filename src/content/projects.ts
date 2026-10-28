@@ -288,7 +288,7 @@ export const projects: Project[] = [
     "description": null,
     "coverImageUrl": "/assets/projects/ipress-conference/cover.jpg",
     "screenshots": [],
-    "projectUrl": null,
+    "projectUrl": "https://www.ipressconf.com/",
     "githubUrl": null,
     "tags": [
       "B2B2C Saas"
