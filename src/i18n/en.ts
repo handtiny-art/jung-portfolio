@@ -14,8 +14,8 @@ export const en = {
   // Home page
   home: {
     badge: "Product Manager",
-    heroTitle1: "Hi, I'm a",
-    heroTitle2: "Product Manager",
+    heroTitle1: "Hi, I'm",
+    heroTitle2: "Judy Kang",
     heroDesc: "Passionate about crafting user-centric product experiences and data-driven decisions. Also a music and video creator. This is my personal portfolio and creative space.",
     viewProjects: "View Projects",
     readBlog: "Read Blog",

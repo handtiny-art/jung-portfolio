@@ -14,8 +14,8 @@ export const zh = {
   // Home page
   home: {
     badge: "Product Manager",
-    heroTitle1: "Hi, 我是一位",
-    heroTitle2: "產品經理",
+    heroTitle1: "Hi, 我是",
+    heroTitle2: "Judy Kang",
     heroDesc: "專注於打造以用戶為中心的產品體驗，熱愛數據驅動決策，同時也是音樂與影像創作的愛好者。這裡是我的個人作品集與創作空間。",
     viewProjects: "查看作品集",
     readBlog: "閱讀文章",

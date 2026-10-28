@@ -59,7 +59,7 @@ export default function Home() {
             </div>
 
             <h1
-              className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 leading-tight"
+              className="text-4xl sm:text-5xl font-bold tracking-tight mb-8 leading-tight"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 color: "oklch(0.165 0.028 42)",
@@ -68,13 +68,6 @@ export default function Home() {
               {t.home.heroTitle1}<br />
               <span style={{ color: "oklch(0.42 0.065 48)" }}>{t.home.heroTitle2}</span>
             </h1>
-
-            <p
-              className="text-lg leading-relaxed mb-8"
-              style={{ color: "oklch(0.52 0.030 52)" }}
-            >
-              {t.home.heroDesc}
-            </p>
 
             <div className="flex flex-wrap gap-3">
               <Button
@@ -89,17 +82,6 @@ export default function Home() {
                 <Link href="/projects">
                   {t.home.viewProjects} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                style={{
-                  borderColor: "oklch(0.68 0.105 58 / 0.6)",
-                  color: "oklch(0.42 0.065 48)",
-                  background: "oklch(0.88 0.025 65 / 0.3)",
-                }}
-              >
-                <Link href="/blog">{t.home.readBlog}</Link>
               </Button>
             </div>
           </div>
