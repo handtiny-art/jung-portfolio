@@ -314,42 +314,21 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "level": 3,
-          "text": "My Role: Product Manager"
+          "role": "Product Manager",
+          "timeline": "2024 Q3 - 2026 Q1",
+          "team": "2 Stakeholders, 2 SA, 1 Engineer, 1 Designer",
+          "responsibilitiesTitle": "My Responsibilities",
+          "responsibilities": [
+            "Researched and analyzed the differences between journal and conference workflows.",
+            "Designed the system structure and user interface.",
+            "Prepared use cases and product requirement documents (PRDs).",
+            "Collaborated closely with a system analyst, engineer, and designer.",
+            "Developed the testing plan and wrote detailed test cases.",
+            "Planned pre-launch activities."
+          ]
         },
-        "id": "roleHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "level": 3,
-          "text": "Timeline: 2024 Q3 - 2026 Q1"
-        },
-        "id": "timelineHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "level": 3,
-          "text": "Team: 2 Stakeholders, 2 SA, 1 Engineer, 1 Designer"
-        },
-        "id": "teamHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "level": 3,
-          "text": "My Responsibilities"
-        },
-        "id": "responsibilitiesHeading",
-        "type": "heading"
-      },
-      {
-        "data": {
-          "text": "・Researched and analyzed the differences between journal and conference workflows.\n・Designed the system structure and user interface.\n・Prepared use cases and product requirement documents (PRDs).\n・Collaborated closely with a system analyst, engineer, and designer.\n・Developed the testing plan and wrote detailed test cases.\n・Planned pre-launch activities."
-        },
-        "id": "responsibilitiesText",
-        "type": "text"
+        "id": "overviewMeta",
+        "type": "overviewMeta"
       },
       {
         "data": {},
