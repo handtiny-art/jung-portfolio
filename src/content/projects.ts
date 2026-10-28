@@ -286,7 +286,7 @@ export const projects: Project[] = [
     "slug": "ipress-conference-platform",
     "summary": "iPress is an academic editorial management platform that supports journals in handling manuscript submission, peer review, and publication workflows.",
     "description": null,
-    "coverImageUrl": null,
+    "coverImageUrl": "/assets/projects/ipress-conference/cover.jpg",
     "screenshots": [],
     "projectUrl": null,
     "githubUrl": null,
