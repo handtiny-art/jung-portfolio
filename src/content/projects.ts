@@ -692,19 +692,6 @@ export const projects: Project[] = [
         },
         "id": "improvement2TextAfter",
         "type": "text"
-      },
-      {
-        "data": {
-          "items": [
-            {
-              "metric": "External Reviewers",
-              "value": "+10%",
-              "description": "Increase compared to the previous year, after the two-tab redesign shipped in early 2025."
-            }
-          ]
-        },
-        "id": "improvement2Metrics",
-        "type": "metrics"
       }
     ]
   },
