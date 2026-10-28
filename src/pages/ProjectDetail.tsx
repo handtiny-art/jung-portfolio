@@ -381,6 +381,33 @@ function RenderBlock({ block, onZoom }: { block: ContentBlock; onZoom: (src: str
       );
     }
 
+    case "numberedCards": {
+      const items = block.data.items.filter(i => i.title);
+      if (!items.length) return null;
+      return (
+        <div className="grid sm:grid-cols-2 gap-4 my-6">
+          {items.map((item, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl border p-6"
+              style={{ borderColor: "oklch(0.72 0.115 65 / 0.4)", background: "oklch(0.99 0.012 75)" }}
+            >
+              <div
+                className="font-mono text-sm font-semibold mb-3"
+                style={{ color: "oklch(0.58 0.075 52)" }}
+              >
+                {String(idx + 1).padStart(2, "0")}
+              </div>
+              <div className="font-semibold text-foreground mb-2">{item.title}</div>
+              {item.description && (
+                <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      );
+    }
+
     default:
       return null;
   }

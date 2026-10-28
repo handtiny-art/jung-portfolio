@@ -692,6 +692,43 @@ export const projects: Project[] = [
         },
         "id": "improvement2TextAfter",
         "type": "text"
+      },
+      {
+        "data": {},
+        "id": "dividerBeforeLearnings",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 1,
+          "text": "Learnings"
+        },
+        "id": "learningsHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "title": "Collaborating with Engineers",
+              "description": "At the start of the project, one of my engineers was new to the iPress system, which led to many communication challenges. Later, I managed to simplify complex workflows into clearer user flows and prototypes, successfully helping him understand the processes."
+            },
+            {
+              "title": "Careful Planning of Information Architecture",
+              "description": "As a beginner PM, I initially struggled with insufficient planning. I learned to develop a detailed PRD by analyzing input and output data and considering various scenarios. In addition, I improved my ability to write clear and well-organized documents."
+            },
+            {
+              "title": "Risk Management Through Early Planning",
+              "description": "In the middle of the project, I noticed information gaps among the team, which once led to conflicts. I realized that early planning and proactive communication are essential to prevent the project from encountering risks."
+            },
+            {
+              "title": "Communicating with Stakeholders",
+              "description": "I learned to recognize which decisions I could make independently and which decisions, such as those potentially affecting product sales, required discussion with stakeholders."
+            }
+          ]
+        },
+        "id": "learningsCards",
+        "type": "numberedCards"
       }
     ]
   },

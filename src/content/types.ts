@@ -31,6 +31,11 @@ export type OverviewMetaBlock = {
     responsibilities: string[];
   };
 };
+export type NumberedCardsBlock = {
+  id: string;
+  type: "numberedCards";
+  data: { items: { title: string; description?: string }[] };
+};
 
 export type ContentBlock =
   | HeadingBlock
@@ -46,7 +51,8 @@ export type ContentBlock =
   | StepsBlock
   | ListBlock
   | LinkBlock
-  | OverviewMetaBlock;
+  | OverviewMetaBlock
+  | NumberedCardsBlock;
 
 export interface Category {
   id: number;
