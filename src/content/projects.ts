@@ -1037,7 +1037,7 @@ export const projects: Project[] = [
     "description": null,
     "coverImageUrl": "/assets/projects/youtubetovocab/cover.png",
     "screenshots": [],
-    "projectUrl": null,
+    "projectUrl": "https://y-tto-vocab-card.vercel.app/",
     "githubUrl": null,
     "tags": [
       "Vibe coding",
