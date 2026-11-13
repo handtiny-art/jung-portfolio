@@ -1066,13 +1066,6 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "items": ["92-95% Time Saved", "270+ Likes", "240+ Reposts"]
-        },
-        "id": "impactBadges",
-        "type": "badges"
-      },
-      {
-        "data": {
           "level": 2,
           "text": "My Role: Solo Product Creator"
         },
@@ -1108,6 +1101,40 @@ export const projects: Project[] = [
         },
         "id": "F0pevbTQ",
         "type": "text"
+      },
+      {
+        "data": {},
+        "id": "dividerBeforeImpact",
+        "type": "divider"
+      },
+      {
+        "data": {
+          "level": 1,
+          "text": "Impact"
+        },
+        "id": "impactHeading",
+        "type": "heading"
+      },
+      {
+        "data": {
+          "items": [
+            {
+              "metric": "Flashcard Creation Time",
+              "value": "5 min",
+              "description": "Down from 2 hours per video."
+            },
+            {
+              "metric": "Threads Likes",
+              "value": "270"
+            },
+            {
+              "metric": "Threads Reposts",
+              "value": "240"
+            }
+          ]
+        },
+        "id": "impactMetrics",
+        "type": "metrics"
       },
       {
         "data": {},
