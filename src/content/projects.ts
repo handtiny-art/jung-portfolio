@@ -1120,8 +1120,7 @@ export const projects: Project[] = [
           "items": [
             {
               "metric": "Flashcard Creation Time",
-              "value": "5 min",
-              "description": "Down from 2 hours per video."
+              "value": "1 hr → 5 mins"
             },
             {
               "metric": "Threads Likes",
