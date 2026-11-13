@@ -1494,7 +1494,7 @@ export const projects: Project[] = [
       },
       {
         "data": {
-          "text": "Threads Community Response: After I posted the demo video on threads, I received about 280 likes and 240 reposts."
+          "text": "Threads Community Response: After I posted the demo video on threads, I received about 270 likes and 240 reposts."
         },
         "id": "impactThreadsText",
         "type": "text"

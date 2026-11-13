@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { asset } from "@/lib/assets";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Linkedin, Mail, MapPin, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -202,6 +202,31 @@ export function Footer() {
             <p className="text-xs text-muted-foreground">
               © {new Date().getFullYear()} {t.common.copyright}
             </p>
+            <div
+              className="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1.5 mt-2 text-xs"
+              style={{ color: "oklch(0.50 0.025 55)" }}
+            >
+              <a
+                href="mailto:ms0797899@gmail.com"
+                className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+              >
+                <Mail className="h-3.5 w-3.5" />
+                ms0797899@gmail.com
+              </a>
+              <span className="inline-flex items-center gap-1.5">
+                <MapPin className="h-3.5 w-3.5" />
+                Toronto, ON
+              </span>
+              <a
+                href="https://www.linkedin.com/in/jung-kang-776205245/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+                LinkedIn
+              </a>
+            </div>
           </div>
 
           <nav className="flex items-center gap-5">
