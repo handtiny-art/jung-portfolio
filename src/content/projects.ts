@@ -1031,7 +1031,7 @@ export const projects: Project[] = [
   },
   {
     "id": 3,
-    "title": "YoutubetoVocab",
+    "title": "YTtoVocab",
     "slug": "youtubetovocab",
     "summary": "An innovative learning app which helps learners build flashcards in a very efficient way.",
     "description": null,
