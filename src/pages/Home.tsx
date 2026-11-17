@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getProjects } from "@/content";
 import { asset } from "@/lib/assets";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, MapPin } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -83,6 +83,51 @@ export default function Home() {
                   {t.home.viewProjects} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
+            </div>
+
+            {/* Contact info */}
+            <div className="flex flex-wrap items-center gap-2.5 mt-6">
+              <a
+                href="mailto:ms0797899@gmail.com"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors"
+                style={{
+                  background: "oklch(0.99 0.012 75)",
+                  border: "1px solid oklch(0.84 0.030 65)",
+                  color: "oklch(0.40 0.06 52)",
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "oklch(0.72 0.115 65 / 0.6)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "oklch(0.84 0.030 65)"; }}
+              >
+                <Mail className="h-3.5 w-3.5" />
+                ms0797899@gmail.com
+              </a>
+              <span
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium"
+                style={{
+                  background: "oklch(0.99 0.012 75)",
+                  border: "1px solid oklch(0.84 0.030 65)",
+                  color: "oklch(0.40 0.06 52)",
+                }}
+              >
+                <MapPin className="h-3.5 w-3.5" />
+                Toronto, ON
+              </span>
+              <a
+                href="https://www.linkedin.com/in/jung-kang-776205245/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-colors"
+                style={{
+                  background: "oklch(0.99 0.012 75)",
+                  border: "1px solid oklch(0.84 0.030 65)",
+                  color: "oklch(0.40 0.06 52)",
+                }}
+                onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "oklch(0.72 0.115 65 / 0.6)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "oklch(0.84 0.030 65)"; }}
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
