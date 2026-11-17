@@ -41,7 +41,7 @@ export default function Home() {
         />
 
         <div className="container pt-20 pb-16 relative">
-          <div className="max-w-2xl">
+          <div className="max-w-4xl">
             {/* Badge */}
             <div
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold mb-6"
