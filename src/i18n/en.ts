@@ -16,7 +16,7 @@ export const en = {
     badge: "Product Manager",
     heroTitle1: "Hi, I'm",
     heroTitle2: "Judy Kang",
-    heroDesc: "Passionate about crafting user-centric product experiences and data-driven decisions. Also a music and video creator. This is my personal portfolio and creative space.",
+    heroDesc: "I have three years of product management experience for a B2B2C SaaS product, where I applied user-centered principles to product development and communicating effectively with stakeholders, designers, and engineers. I am skilled at breaking down complex ideas into actionable tasks, aligning team members, and coordinating work toward deadlines. Beyond product management, I have long been interested in education issues and Edtech, especially how to reduce the friction teachers face when adopting new technology. I manage a digital content account called educlusion_ai, where I share new teaching methods with AI, explanations for technical terms, and reflections to AI in the education field.",
     viewProjects: "View Projects",
     readBlog: "Read Blog",
     skills: "Skills",

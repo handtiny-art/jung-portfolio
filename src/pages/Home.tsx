@@ -69,6 +69,13 @@ export default function Home() {
               <span style={{ color: "oklch(0.42 0.065 48)" }}>{t.home.heroTitle2}</span>
             </h1>
 
+            <p
+              className="text-lg leading-relaxed mb-8"
+              style={{ color: "oklch(0.52 0.030 52)" }}
+            >
+              {t.home.heroDesc}
+            </p>
+
             <div className="flex flex-wrap gap-3">
               <Button
                 asChild

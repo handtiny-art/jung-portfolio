@@ -16,7 +16,7 @@ export const zh = {
     badge: "Product Manager",
     heroTitle1: "Hi, 我是",
     heroTitle2: "Judy Kang",
-    heroDesc: "專注於打造以用戶為中心的產品體驗，熱愛數據驅動決策，同時也是音樂與影像創作的愛好者。這裡是我的個人作品集與創作空間。",
+    heroDesc: "我擁有三年 B2B2C SaaS 產品的產品經理經驗，在產品開發中貫徹以使用者為中心的原則，並與利害關係人、設計師與工程師保持高效溝通。我擅長將複雜的想法拆解成可執行的任務，凝聚團隊共識，並掌握時程推進工作。除了產品管理之外，我也長期關注教育議題與 EdTech，特別是如何降低教師導入新科技時的摩擦。我經營一個數位內容帳號 educlusion_ai，分享結合 AI 的新教學方法、技術名詞解析，以及對 AI 在教育領域中的反思。",
     viewProjects: "查看作品集",
     readBlog: "閱讀文章",
     skills: "技能專長",
