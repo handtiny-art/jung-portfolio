@@ -14,8 +14,6 @@ export function Navbar() {
     { href: "/", label: t.nav.home },
     { href: "/projects", label: t.nav.projects },
     { href: "/blog", label: t.nav.blog },
-    { href: "/music", label: t.nav.music },
-    { href: "/videos", label: t.nav.videos },
   ];
 
   return (
@@ -167,8 +165,6 @@ export function Footer() {
     { href: "/", label: t.nav.home },
     { href: "/projects", label: t.nav.projects },
     { href: "/blog", label: t.nav.blog },
-    { href: "/music", label: t.nav.music },
-    { href: "/videos", label: t.nav.videos },
   ];
 
   return (
